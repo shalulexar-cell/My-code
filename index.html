@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO & OpenGraph Meta Tags -->
-  <title>Quick Docs | Professional Typing & Visa Services</title>
-  <meta name="description" content="Professional UAE visa, Emirates ID typing, medical, translation, attestation and document services from Quick Docs UAE." />
+  <title>Quick Docs UAE | Visa, Full Attestation & Legal Translation Dubai</title>
+  <meta name="description" content="Express UAE visa services, family visa renewals, home country & UAE MOFA attestation, police clearance, and certified legal translation in Dubai." />
+  <meta name="keywords" content="family visa dubai, visa renewal dubai, home country mofa attestation, uae mofa attestation, police clearance certificate, legal translation dubai, quick docs uae" />
   <meta property="og:title" content="Quick Docs UAE | Documents Made Simple" />
-  <meta property="og:description" content="Reliable help with UAE visas, typing, attestation and official documents." />
+  <meta property="og:description" content="Reliable document clearance, full attestation (Home Country & UAE MOFA), family visas, and legal translation in Dubai." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://quickdocsuae.com" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Local Dubai Geo-Location Signals -->
+  <meta name="geo.region" content="AE-DU">
+  <meta name="geo.placename" content="Dubai">
+  <meta name="geo.position" content="25.2048;55.2708">
+  <meta name="ICBM" content="25.2048, 55.2708">
 
   <!-- Favicon & Social Image -->
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -20,16 +27,85 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Noto+Kufi+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom Styles, CSS Variables & Animations -->
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://quickdocsuae.com/#business",
+        "name": "Quick Docs UAE - Visa, Attestation & Translation Services",
+        "image": "https://quickdocsuae.com/IMG_0216.jpg",
+        "url": "https://quickdocsuae.com",
+        "telephone": "+971508979376",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressRegion": "Dubai",
+          "addressCountry": "AE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "25.2048",
+          "longitude": "55.2708"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Document Clearance Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Visa & Residency Renewal" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Attestation (Home Country MOFA + UAE MOFA)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Legal Translation for All Purposes" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Police Clearance Certificate (PCC) Assistance" } }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is included in full certificate attestation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Full attestation includes verifying your personal or educational certificate through the issuing country's relevant ministry, home country Ministry of Foreign Affairs (MOFA), the UAE Embassy in the origin country, and final attestation at the UAE MOFA."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can certified legal translations be used in the UAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our certified legal translations are recognized by all UAE Ministries, Courts, Immigration Departments, Freezones, and official government entities for any legal, corporate, civil, or educational purpose."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --font-body: "DM Sans", sans-serif;
       --font-heading: "Manrope", sans-serif;
+      --font-arabic: "Noto Kufi Arabic", sans-serif;
       --primary: #0f172a;        /* Brand Navy */
       --primary-hover: #1e293b;
       --secondary: #0284c7;      /* Accent Blue */
@@ -45,21 +121,26 @@
       color: var(--primary);
     }
 
+    [dir="rtl"] body {
+      font-family: var(--font-arabic), sans-serif;
+    }
+
     h1, h2, h3, h4, h5, h6, .font-display {
       font-family: var(--font-heading);
+    }
+
+    [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6, [dir="rtl"] .font-display {
+      font-family: var(--font-arabic);
     }
 
     .bg-brand-primary { background-color: var(--primary); }
     .bg-brand-primary-hover:hover { background-color: var(--primary-hover); }
     .text-brand-primary { color: var(--primary); }
-    
     .bg-brand-secondary { background-color: var(--secondary); }
     .text-brand-secondary { color: var(--secondary); }
-    
     .bg-brand-whatsapp { background-color: var(--whatsapp); }
     .bg-brand-whatsapp-hover:hover { background-color: var(--whatsapp-hover); }
     .text-brand-whatsapp { color: var(--whatsapp); }
-
     .bg-hero-tint { background-color: var(--hero-tint); }
     .bg-surface-raised { background-color: var(--surface-raised); }
     .border-brand { border-color: var(--border-color); }
@@ -77,9 +158,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
-
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body id="top" class="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -88,11 +166,16 @@
   <div class="bg-brand-primary text-white">
     <div class="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 text-xs font-medium sm:px-8">
       <span class="flex items-center gap-2">
-        <i data-lucide="clock-3" class="w-3.5 h-3.5"></i> Mon–Sat · 9:00am–7:00pm
+        <i data-lucide="clock-3" class="w-3.5 h-3.5"></i> <span data-en="Mon–Sat · 9:00am–7:00pm" data-ar="الإثنين – السبت · 9:00 صباحاً – 7:00 مساءً">Mon–Sat · 9:00am–7:00pm</span>
       </span>
-      <div class="hidden items-center gap-5 sm:flex">
-        <a href="mailto:info@quickdocsuae.com" class="hover:opacity-80 transition-opacity">info@quickdocsuae.com</a>
-        <a href="tel:+971508979376" class="font-bold">+971 50 8979 376</a>
+      <div class="flex items-center gap-5">
+        <button id="langToggle" onclick="toggleLanguage()" class="inline-flex items-center gap-1 rounded bg-slate-800 px-2 py-0.5 text-xs text-sky-400 hover:bg-slate-700 transition">
+          <i data-lucide="globe" class="w-3 h-3"></i> <span id="langText">العربية</span>
+        </button>
+        <div class="hidden items-center gap-5 sm:flex">
+          <a href="mailto:info@quickdocsuae.com" class="hover:opacity-80 transition-opacity">info@quickdocsuae.com</a>
+          <a href="tel:+971508979376" class="font-bold">+971 50 8979 376</a>
+        </div>
       </div>
     </div>
   </div>
@@ -100,28 +183,21 @@
   <!-- HEADER / NAVIGATION -->
   <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 sm:px-8">
-      
-      <!-- Custom Brand Logo Image -->
       <a href="#top" class="flex items-center gap-2 py-2" aria-label="Quick Docs home">
-        <img 
-          src="IMG_0216.jpg" 
-          alt="Quick Docs Logo" 
-          class="h-14 sm:h-16 md:h-20 w-auto max-h-20 object-contain"
-          onerror="this.onerror=null; this.src='https://placehold.co/220x70/0f172a/ffffff?text=Quick+Docs';" 
-        />
+        <img src="IMG_0216.jpg" alt="Quick Docs Logo" class="h-14 sm:h-16 md:h-20 w-auto max-h-20 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/220x70/0f172a/ffffff?text=Quick+Docs';" />
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
-        <a href="#services" class="transition-colors hover:text-brand-primary">Services</a>
-        <a href="#process" class="transition-colors hover:text-brand-primary">How it works</a>
-        <a href="#contact" class="transition-colors hover:text-brand-primary">Contact</a>
+        <a href="#services" class="transition-colors hover:text-brand-primary" data-en="Services" data-ar="الخدمات">Services</a>
+        <a href="#quote-builder" class="transition-colors hover:text-brand-primary" data-en="Get Quote" data-ar="طلب سعر">Get Quote</a>
+        <a href="#process" class="transition-colors hover:text-brand-primary" data-en="How it works" data-ar="كيف نعمل">How it works</a>
+        <a href="#faq" class="transition-colors hover:text-brand-primary" data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</a>
+        <a href="#contact" class="transition-colors hover:text-brand-primary" data-en="Contact" data-ar="اتصل بنا">Contact</a>
       </nav>
 
-      <!-- Action Buttons -->
       <div class="flex items-center gap-2">
-        <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20Quick%20Docs%20service." target="_blank" rel="noreferrer" class="hidden sm:inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand-whatsapp px-5 text-sm font-semibold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 bg-brand-whatsapp-hover">
-          <i data-lucide="message-circle" class="w-4 h-4"></i> Chat now
+        <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20service." target="_blank" rel="noreferrer" class="hidden sm:inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand-whatsapp px-5 text-sm font-semibold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 bg-brand-whatsapp-hover">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> <span data-en="Chat now" data-ar="تحدث معنا الان">Chat now</span>
         </a>
         <a href="#services" class="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-md" aria-label="View services">
           <i data-lucide="menu" class="w-6 h-6"></i>
@@ -133,80 +209,89 @@
   <!-- HERO SECTION -->
   <section class="relative bg-hero-tint">
     <div class="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-12 sm:px-8 md:pb-20 md:pt-16 lg:grid-cols-[1.03fr_0.97fr] lg:items-center lg:gap-16 lg:py-24">
-      
-      <!-- Hero Left Text -->
       <div class="relative z-10 reveal-up">
         <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-3 py-1.5 text-xs font-bold uppercase text-brand-primary shadow-sm">
-          <i data-lucide="badge-check" class="w-4 h-4 text-brand-whatsapp"></i> Professional document support in the UAE
+          <i data-lucide="badge-check" class="w-4 h-4 text-brand-whatsapp"></i> <span data-en="Professional document support in the UAE" data-ar="خدمات معتمدة للمعاملات والمستندات في الإمارات">Professional document support in the UAE</span>
         </div>
-        <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.04] text-brand-primary sm:text-5xl lg:text-[4.2rem]">
+        <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.04] text-brand-primary sm:text-5xl lg:text-[4.2rem]" data-en="Your documents,<br /><span class='text-brand-secondary'>handled with care.</span>" data-ar="جميع معاماتك ومستنداتك<br /><span class='text-brand-secondary'>في أيدٍ أمينة ومهنية</span>">
           Your documents,<br /><span class="text-brand-secondary">handled with care.</span>
         </h1>
-        <p class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-          From family visas and Emirates ID typing to attestation and translation, Quick Docs makes every step clear and straightforward.
+        <p class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8" data-en="From family visas and Emirates ID typing to home country & UAE MOFA attestation and legal translations, Quick Docs makes every step straightforward." data-ar="من تأشيرات العائلة وطباعة الهوية الإماراتية إلى تصديق الخارجي المزدوج والترجمة القانونية المعتمدة، كويك دوكس تجعل الأمور سهلة ومباشرة.">
+          From family visas and Emirates ID typing to home country & UAE MOFA attestation and legal translations, Quick Docs makes every step straightforward.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20Quick%20Docs%20service." target="_blank" rel="noreferrer" class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md bg-brand-whatsapp px-6 text-base font-semibold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 bg-brand-whatsapp-hover">
-            <i data-lucide="message-circle" class="w-5 h-5"></i> Start on WhatsApp
+            <i data-lucide="message-circle" class="w-5 h-5"></i> <span data-en="Start on WhatsApp" data-ar="تواصل عبر الواتساب">Start on WhatsApp</span>
           </a>
-          <a href="tel:+971508979376" class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-6 text-base font-semibold text-slate-800 transition-all duration-300 hover:border-slate-400 hover:bg-slate-50">
-            <i data-lucide="phone" class="w-4 h-4"></i> Call +971 50 8979 376
+          <a href="#quote-builder" class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-6 text-base font-semibold text-slate-800 transition-all duration-300 hover:border-slate-400 hover:bg-slate-50">
+            <i data-lucide="calculator" class="w-4 h-4"></i> <span data-en="Request Fast Quote" data-ar="طلب سعر سريع">Request Fast Quote</span>
           </a>
-        </div>
-        <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-brand-primary">
-          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-whatsapp"></i> Clear guidance</span>
-          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-whatsapp"></i> Careful document checks</span>
-          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-whatsapp"></i> Direct support</span>
         </div>
       </div>
 
-      <!-- Hero Right Image -->
       <div class="relative reveal-up" style="animation-delay: 120ms;">
         <div class="relative aspect-[5/4] overflow-hidden rounded-lg shadow-2xl">
-          <img src="quick-docs-hero.jpg" alt="Visa application documents arranged on a professional desk" width="1280" height="1024" class="h-full w-full object-cover" />
+          <img src="quick-docs-hero.jpg" alt="Visa application documents arranged on a professional desk" width="1280" height="1024" class="h-full w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop';" />
           <div class="absolute inset-x-5 bottom-5 flex items-center gap-3 rounded-md border border-white/30 bg-slate-900/90 p-4 text-white shadow-lg backdrop-blur-md">
             <span class="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-brand-whatsapp">
               <i data-lucide="file-check-2" class="w-5 h-5"></i>
             </span>
             <div>
-              <p class="text-xs font-medium text-slate-300">One place for your paperwork</p>
-              <p class="font-display text-sm font-bold sm:text-base">Visa · ID · Medical · Attestation</p>
+              <p class="text-xs font-medium text-slate-300" data-en="One place for all your paperwork" data-ar="مكان واحد لجميع معاملاتك">One place for all your paperwork</p>
+              <p class="font-display text-sm font-bold sm:text-base" data-en="Visas · Full Attestation · Translation · ID" data-ar="التأشيرات · التصديقات · الترجمة · الهوية">Visas · Full Attestation · Translation · ID</p>
             </div>
           </div>
         </div>
-        <div class="absolute -left-4 top-6 hidden rounded-md bg-white px-4 py-3 shadow-xl sm:block">
-          <div class="flex items-center gap-2 text-sm font-bold text-brand-primary">
-            <i data-lucide="shield-check" class="w-5 h-5 text-brand-whatsapp"></i> Confidential handling
-          </div>
-        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- BENEFITS STRIP -->
-  <section class="border-y border-slate-200 bg-surface-raised" aria-label="Service benefits">
-    <div class="mx-auto grid max-w-7xl divide-y divide-slate-200 px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8">
-      <div class="flex items-start gap-4 py-6 sm:px-7 first:pl-0 last:pr-0">
-        <i data-lucide="file-check-2" class="mt-0.5 w-6 h-6 shrink-0 text-brand-secondary"></i>
-        <div>
-          <h2 class="font-display text-sm font-bold text-brand-primary">Complete support</h2>
-          <p class="mt-1 text-sm text-slate-500">Guidance from document check to submission</p>
-        </div>
+  <!-- WHATSAPP FAST QUOTE BUILDER SECTION -->
+  <section id="quote-builder" class="border-y border-slate-200 bg-slate-900 py-16 text-white">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+      <div class="text-center">
+        <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-400 border border-sky-500/20" data-en="Instant Direct Consultation" data-ar="استشارة مباشرة فورية">Instant Direct Consultation</span>
+        <h2 class="mt-3 text-2xl font-extrabold sm:text-3xl" data-en="Need exact requirements & quick fee guidance?" data-ar="تحتاج لمعرفة المستندات والأسعار الدقيقة؟">Need exact requirements & quick fee guidance?</h2>
+        <p class="mt-2 text-sm text-slate-400" data-en="Select your service details below to send an instantly pre-filled request directly to our team on WhatsApp." data-ar="اختر نوع الخدمة لتوليد رسالة استفسار دقيقة ومباشرة عبر الواتساب.">Select your service details below to send an instantly pre-filled request directly to our team on WhatsApp.</p>
       </div>
-      <div class="flex items-start gap-4 py-6 sm:px-7 first:pl-0 last:pr-0">
-        <i data-lucide="message-circle" class="mt-0.5 w-6 h-6 shrink-0 text-brand-secondary"></i>
-        <div>
-          <h2 class="font-display text-sm font-bold text-brand-primary">Easy communication</h2>
-          <p class="mt-1 text-sm text-slate-500">Speak directly with us on WhatsApp</p>
+
+      <div class="mt-8 rounded-xl bg-slate-800/80 p-6 sm:p-8 border border-slate-700 shadow-2xl">
+        <div class="grid gap-5 sm:grid-cols-3">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-2" data-en="Select Service" data-ar="اختر الخدمة">Select Service</label>
+            <select id="qbService" class="w-full rounded-md border border-slate-600 bg-slate-900 px-3 py-2.5 text-sm text-white focus:border-sky-500 focus:outline-none">
+              <option value="Full Attestation (Home Country MOFA + UAE MOFA)">Full Attestation (Home Country + UAE MOFA)</option>
+              <option value="UAE MOFA Attestation Only">UAE MOFA Attestation Only</option>
+              <option value="Legal Translation for Official Purpose">Legal Translation (Official/Legal Purposes)</option>
+              <option value="Family Visa New Application">Family Visa (New Sponsorship)</option>
+              <option value="Family Visa Renewal">Family Visa Renewal</option>
+              <option value="Police Clearance Certificate (PCC)">Police Clearance Certificate (PCC)</option>
+              <option value="Emirates ID / Medical Typing">Emirates ID / Medical Typing</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-2" data-en="Number of Documents / Persons" data-ar="عدد المستندات / الأشخاص">Document / Applicant Count</label>
+            <select id="qbCount" class="w-full rounded-md border border-slate-600 bg-slate-900 px-3 py-2.5 text-sm text-white focus:border-sky-500 focus:outline-none">
+              <option value="1">1 Document / Person</option>
+              <option value="2">2 Documents / Persons</option>
+              <option value="3">3 Documents / Persons</option>
+              <option value="4+">4 or more</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-2" data-en="Urgency / Timeline" data-ar="مدى العجلة">Processing Urgency</label>
+            <select id="qbSpeed" class="w-full rounded-md border border-slate-600 bg-slate-900 px-3 py-2.5 text-sm text-white focus:border-sky-500 focus:outline-none">
+              <option value="Standard Processing">Standard Processing</option>
+              <option value="Express / Urgent Processing">Express / Urgent Processing</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="flex items-start gap-4 py-6 sm:px-7 first:pl-0 last:pr-0">
-        <i data-lucide="heart-handshake" class="mt-0.5 w-6 h-6 shrink-0 text-brand-secondary"></i>
-        <div>
-          <h2 class="font-display text-sm font-bold text-brand-primary">Personal attention</h2>
-          <p class="mt-1 text-sm text-slate-500">Help shaped around your document needs</p>
-        </div>
+
+        <button onclick="sendWhatsAppQuote()" class="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-brand-whatsapp py-3.5 px-6 text-sm font-bold text-white transition hover:bg-brand-whatsapp-hover shadow-lg">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> <span data-en="Get Fast Quote on WhatsApp" data-ar="احصل على السعر عبر الواتساب">Get Fast Quote on WhatsApp</span>
+        </button>
       </div>
     </div>
   </section>
@@ -214,139 +299,154 @@
   <!-- SERVICES SECTION -->
   <section id="services" class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
     <div class="max-w-2xl">
-      <p class="text-sm font-bold uppercase text-brand-secondary">Our services</p>
-      <h2 class="mt-3 text-3xl font-extrabold text-brand-primary sm:text-4xl">Everything your paperwork needs.</h2>
-      <p class="mt-4 text-base leading-7 text-slate-600">Choose a service to start a direct WhatsApp conversation with our team.</p>
+      <p class="text-sm font-bold uppercase text-brand-secondary" data-en="Our services" data-ar="خدماتنا">Our services</p>
+      <h2 class="mt-3 text-3xl font-extrabold text-brand-primary sm:text-4xl" data-en="Complete document & visa solutions in Dubai." data-ar="حلول كاملة للمستندات والتأشيرات في دبي">Complete document & visa solutions in Dubai.</h2>
+      <p class="mt-4 text-base leading-7 text-slate-600" data-en="Choose a service to instantly discuss requirements and document checks with our specialized team." data-ar="اختر الخدمة لمناقشة المتطلبات وتدقيق المستندات مباشرة مع فريقنا المختص.">Choose a service to instantly discuss requirements and document checks with our specialized team.</p>
     </div>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       
-      <!-- 1. Family Visa -->
+      <!-- 1. Full Attestation -->
       <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-family-visa.jpg" alt="Family Visa" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img src="service-attestation.jpg" alt="Full Certificate Attestation" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600&auto=format&fit=crop';" />
         </div>
         <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Family Visa</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Complete support for family sponsorship and residency permits.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Family%20Visa." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Full Certificate Attestation" data-ar="تصديق الشهادات الكامل">Full Certificate Attestation</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="Complete end-to-end verification covering your Home Country Ministries/Embassy and final UAE MOFA attestation." data-ar="تصديق شامل يبدأ من وزارة الخارجية والجهات المختصة في بلدك وحتى وزارة الخارجية في الإمارات.">Complete end-to-end verification covering your Home Country Ministries/Embassy and final UAE MOFA attestation.</p>
+          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20need%20help%20with%20Full%20Certificate%20Attestation%20(Home%20Country%20%2B%20UAE%20MOFA)." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </article>
 
-      <!-- 2. Family Visa Renewal -->
+      <!-- 2. Legal Translation -->
       <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-visa-renewal.jpg" alt="Family Visa Renewal" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img src="service-translation.jpg" alt="Legal Translation for All Purposes" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop';" />
         </div>
         <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Family Visa Renewal</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Reliable assistance to keep your family's residency current.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Family%20Visa%20Renewal." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- 3. Newborn Baby Residency -->
-      <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-newborn.jpg" alt="Newborn Baby Residency" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Newborn Baby Residency</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Careful handling of your newborn's first residency paperwork.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Newborn%20Baby%20Residency." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- 4. Emirates ID Typing -->
-      <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-emirates-id.jpg" alt="Emirates ID Typing" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Emirates ID Typing</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Applications for new, renewed or replacement Emirates IDs.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Emirates%20ID%20Typing." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- 5. Visa Medical Typing -->
-      <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-medical.jpg" alt="Visa Medical Typing" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Visa Medical Typing</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Booking and typing support for required residency medicals.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Visa%20Medical%20Typing." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- 6. Legal Translation -->
-      <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-translation.jpg" alt="Legal Translation" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        </div>
-        <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Legal Translation</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Certified translation support for your official documents.</p>
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Legal Translation (All Purposes)" data-ar="ترجمة قانونية معتمدة لكافة الأغراض">Legal Translation (All Purposes)</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="Certified translations accepted by all UAE Courts, Ministries, Immigration, Freezones, and official authorities." data-ar="ترجمة قانونية معتمدة ومقبولة لدى جميع المحاكم والوزارات والجهات الحكومية والخاصة في الإمارات.">Certified translations accepted by all UAE Courts, Ministries, Immigration, Freezones, and official authorities.</p>
           <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Legal%20Translation." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </article>
 
-      <!-- 7. Certificate Attestation -->
+      <!-- 3. Family Visa -->
       <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-attestation.jpg" alt="Certificate Attestation" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img src="service-family-visa.jpg" alt="Family Visa Sponsorship" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop';" />
         </div>
         <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Certificate Attestation</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Assistance for birth, marriage and educational certificates.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Certificate%20Attestation." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Family Visa Sponsorship" data-ar="تأشيرة إقامة العائلة">Family Visa Sponsorship</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="End-to-end guidance for sponsoring spouse, children, and parents residency permits in Dubai." data-ar="دعم كامل لكافة إجراءات كفالة الزوجة والأبناء والوالدين وإصدار الإقامات.">End-to-end guidance for sponsoring spouse, children, and parents residency permits in Dubai.</p>
+          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Family%20Visa." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </article>
 
-      <!-- 8. Police Clearance -->
+      <!-- 4. Family Visa Renewal -->
       <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-police-clearance.jpg" alt="Police Clearance Documents" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img src="service-visa-renewal.jpg" alt="Family Visa Renewal" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop';" />
         </div>
         <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Police Clearance</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Support with Good Conduct Certificate applications.</p>
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Family Visa Renewal" data-ar="تجديد إقامة العائلة">Family Visa Renewal</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="Fast and seamless processing for medical, Emirates ID, and renewal of family residency visas." data-ar="تجديد سريع لسلسلة الفحص الطبي والهوية الإماراتية وإقامات أفراد الأسرة دون تأخير.">Fast and seamless processing for medical, Emirates ID, and renewal of family residency visas.</p>
+          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Family%20Visa%20Renewal." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- 5. Police Clearance Certificate -->
+      <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="service-police-clearance.jpg" alt="Police Clearance Certificate" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=600&auto=format&fit=crop';" />
+        </div>
+        <div class="flex flex-1 flex-col p-6">
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Police Clearance Certificate (PCC)" data-ar="شهادة بحث الحالة الجنائية (شهادة حسن السيرة)">Police Clearance Certificate (PCC)</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="Quick application assistance for Dubai Police and UAE Ministry of Interior Good Conduct Certificates." data-ar="مساعدة سريعة في التقديم على شهادة حسن السيرة والسلوك من شرطة دبي ووزارة الداخلية.">Quick application assistance for Dubai Police and UAE Ministry of Interior Good Conduct Certificates.</p>
           <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Police%20Clearance." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </article>
 
-      <!-- 9. Lost Passport Certificate -->
+      <!-- 6. Emirates ID & Medical Typing -->
       <article class="group flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="service-lost-passport.jpg" alt="Passport and Official Documents" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img src="service-emirates-id.jpg" alt="Emirates ID & Medical Typing" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop';" />
         </div>
         <div class="flex flex-1 flex-col p-6">
-          <h3 class="text-lg font-bold text-brand-primary">Lost Passport Certificate</h3>
-          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600">Guidance for reporting a lost passport and required certificates.</p>
-          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Lost%20Passport%20Certificate." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
-            Enquire on WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          <h3 class="text-lg font-bold text-brand-primary" data-en="Emirates ID & Medical Typing" data-ar="طباعة الهوية والفحص الطبي">Emirates ID & Medical Typing</h3>
+          <p class="mt-2 flex-1 text-sm leading-6 text-slate-600" data-en="Accurate typing for new or renewed Emirates IDs, medical fitness appointments, and biometrics." data-ar="طباعة استمارات الهوية الإماراتية وحجوزات الفحص الطبي وتتبع المواعيد بدقة.">Accurate typing for new or renewed Emirates IDs, medical fitness appointments, and biometrics.</p>
+          <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20Emirates%20ID%20%2F%20Medical%20Typing." target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-secondary transition-colors hover:text-brand-primary">
+            <span data-en="Enquire on WhatsApp" data-ar="استفسر عبر الواتساب">Enquire on WhatsApp</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </article>
 
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq" class="bg-slate-50 py-20 border-t border-slate-200">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase text-brand-secondary" data-en="Got Questions?" data-ar="أسئلة شائعة">Got Questions?</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-brand-primary sm:text-4xl" data-en="Frequently Asked Questions" data-ar="الأسئلة الأكثر تكراراً">Frequently Asked Questions</h2>
+        <p class="mt-3 text-sm text-slate-600" data-en="Clear answers to common questions about document attestation, visas, and legal translation in Dubai." data-ar="إجابات واضحة لأكثر الاستفسارات شيوعاً حول التصديقات والفيز والترجمة.">Clear answers to common questions about document attestation, visas, and legal translation in Dubai.</p>
+      </div>
+
+      <div class="mt-10 space-y-4">
+        <!-- Q1 -->
+        <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between text-left font-bold text-brand-primary text-base sm:text-lg">
+            <span data-en="What does 'Full Attestation' cover for personal or educational documents?" data-ar="ماذا يشمل 'التصديق الكامل' للشهادات والمستندات؟">What does 'Full Attestation' cover for personal or educational documents?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform text-slate-400"></i>
+          </button>
+          <div class="hidden pt-3 text-sm leading-6 text-slate-600">
+            Full attestation involves verifying your certificate through the educational or issuing ministry in your home country, the Home Country Ministry of Foreign Affairs (MOFA), the UAE Embassy in that country, and final MOFA attestation inside the UAE.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between text-left font-bold text-brand-primary text-base sm:text-lg">
+            <span data-en="Where can certified legal translations be used in the UAE?" data-ar="أين يمكن استخدام الترجمة القانونية المعتمدة في الإمارات؟">Where can certified legal translations be used in the UAE?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform text-slate-400"></i>
+          </button>
+          <div class="hidden pt-3 text-sm leading-6 text-slate-600">
+            Our certified legal translations are recognized across all UAE Ministries, Federal & Dubai Courts, Freezone Authorities, Notary Public, and immigration departments for any official, legal, corporate, or civil purpose.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between text-left font-bold text-brand-primary text-base sm:text-lg">
+            <span data-en="How long does family visa renewal take in Dubai?" data-ar="كم يستغرق تجديد إقامة العائلة في دبي؟">How long does family visa renewal take in Dubai?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform text-slate-400"></i>
+          </button>
+          <div class="hidden pt-3 text-sm leading-6 text-slate-600">
+            Family visa renewal typically takes 2 to 4 working days after the sponsor's documents, medical test results, and Emirates ID typing are completed.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between text-left font-bold text-brand-primary text-base sm:text-lg">
+            <span data-en="What documents are needed for Dubai Police Clearance Certificate (PCC)?" data-ar="ما هي المستندات المطلوبة لشهادة حسن السيرة من شرطة دبي؟">What documents are needed for Dubai Police Clearance Certificate (PCC)?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform text-slate-400"></i>
+          </button>
+          <div class="hidden pt-3 text-sm leading-6 text-slate-600">
+            You will need a active Emirates ID, active passport copy, UID number, and a passport photo. We assist with instant submission and typing.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -355,31 +455,30 @@
     <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20 lg:py-28">
       <div class="relative overflow-hidden rounded-lg">
         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1024&auto=format&fit=crop" alt="A document specialist reviewing an application" loading="lazy" class="aspect-[4/3] w-full object-cover" />
-        <div class="absolute inset-0 bg-slate-900/10"></div>
       </div>
       <div>
-        <p class="text-sm font-bold uppercase text-brand-secondary">A simpler process</p>
-        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Three clear steps. No guesswork.</h2>
+        <p class="text-sm font-bold uppercase text-brand-secondary" data-en="A simpler process" data-ar="خطوات بسيطة وميسرة">A simpler process</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl" data-en="Three clear steps. No guesswork." data-ar="ثلاث خطوات واضحة بدون تعقيد">Three clear steps. No guesswork.</h2>
         <div class="mt-10 space-y-0">
           <div class="grid grid-cols-[3rem_1fr] gap-4 border-t border-slate-700 py-6 first:border-t-0 first:pt-0">
             <span class="font-display text-sm font-bold text-brand-secondary">01</span>
             <div>
-              <h3 class="text-lg font-bold">Tell us what you need</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-300">Send a message and choose the service you need help with.</p>
+              <h3 class="text-lg font-bold" data-en="Tell us what you need" data-ar="أخبرنا باحتياجك">Tell us what you need</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-300" data-en="Send a message on WhatsApp or through our form with your document details." data-ar="تواصل معنا عبر الواتساب أو النموذج واذكر تفاصيل المعاملة.">Send a message on WhatsApp or through our form with your document details.</p>
             </div>
           </div>
           <div class="grid grid-cols-[3rem_1fr] gap-4 border-t border-slate-700 py-6">
             <span class="font-display text-sm font-bold text-brand-secondary">02</span>
             <div>
-              <h3 class="text-lg font-bold">Share your documents</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-300">We review what you have and explain what is still required.</p>
+              <h3 class="text-lg font-bold" data-en="Share your documents" data-ar="أرسل المستندات للتدقيق">Share your documents</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-300" data-en="We review your files, verify requirements, and provide a clear timeline and quote." data-ar="نقوم بمراجعة الأوراق والتأكد من استيفائها لكافة الشروط وتزويدك بالتكلفة والوقت.">We review your files, verify requirements, and provide a clear timeline and quote.</p>
             </div>
           </div>
           <div class="grid grid-cols-[3rem_1fr] gap-4 border-t border-slate-700 py-6">
             <span class="font-display text-sm font-bold text-brand-secondary">03</span>
             <div>
-              <h3 class="text-lg font-bold">We guide the process</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-300">Get clear updates and support through the next steps.</p>
+              <h3 class="text-lg font-bold" data-en="Fast Processing & Delivery" data-ar="إنجاز المعاملة والتسليم">Fast Processing & Delivery</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-300" data-en="We handle all government typing, submission, attestation, and deliver completed documents." data-ar="نتولى كافة الطباعة الحكومية والتصديقات والإجراءات حتى تسليمك المعاملة جاهزة.">We handle all government typing, submission, attestation, and deliver completed documents.</p>
             </div>
           </div>
         </div>
@@ -387,63 +486,59 @@
     </div>
   </section>
 
-  <!-- CONTACT & FORM SECTION -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
     <div class="grid overflow-hidden rounded-xl border border-slate-200 bg-hero-tint shadow-lg lg:grid-cols-[1.15fr_0.85fr]">
       
       <!-- Contact Form Left -->
       <div class="p-7 sm:p-12 lg:p-14">
-        <p class="text-sm font-bold uppercase text-brand-secondary">Send an enquiry</p>
-        <h2 class="mt-2 text-3xl font-extrabold text-brand-primary sm:text-4xl">Get in touch with us</h2>
-        <p class="mt-3 text-sm leading-6 text-slate-600">Fill out your details below and our team will get back to you promptly.</p>
+        <p class="text-sm font-bold uppercase text-brand-secondary" data-en="Send an enquiry" data-ar="أرسل طلبك">Send an enquiry</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-brand-primary sm:text-4xl" data-en="Get in touch with us" data-ar="تواصل معنا اليوم">Get in touch with us</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600" data-en="Fill out your details below and our team will get back to you promptly." data-ar="أدخل بياناتك وسيقوم فريقنا بالتواصل معك في أقرب وقت.">Fill out your details below and our team will get back to you promptly.</p>
         
-        <!-- Updated FormSubmit Form Integration -->
+        <!-- FormSubmit Integration -->
         <form action="https://formsubmit.co/el/ledoka" method="POST" class="mt-8 space-y-4">
-          <!-- FormSubmit Configuration Settings -->
           <input type="text" name="_honey" style="display:none">
           <input type="hidden" name="_subject" value="New Service Enquiry - QuickDocsUAE">
           <input type="hidden" name="_template" value="table">
 
           <div class="grid gap-4 sm:grid-cols-2">
             <div>
-              <label for="name" class="block text-xs font-bold uppercase text-slate-700">Full Name *</label>
+              <label for="name" class="block text-xs font-bold uppercase text-slate-700" data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
               <input type="text" id="name" name="name" required placeholder="e.g. John Doe" class="mt-1 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary" />
             </div>
             <div>
-              <label for="phone" class="block text-xs font-bold uppercase text-slate-700">Phone Number / WhatsApp *</label>
+              <label for="phone" class="block text-xs font-bold uppercase text-slate-700" data-en="Phone / WhatsApp *" data-ar="الهاتف / الواتساب *">Phone Number / WhatsApp *</label>
               <input type="tel" id="phone" name="phone" required placeholder="+971 50 000 0000" class="mt-1 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary" />
             </div>
           </div>
 
           <div class="grid gap-4 sm:grid-cols-2">
             <div>
-              <label for="email" class="block text-xs font-bold uppercase text-slate-700">Email Address</label>
+              <label for="email" class="block text-xs font-bold uppercase text-slate-700" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
               <input type="email" id="email" name="email" placeholder="name@example.com" class="mt-1 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary" />
             </div>
             <div>
-              <label for="service" class="block text-xs font-bold uppercase text-slate-700">Required Service</label>
+              <label for="service" class="block text-xs font-bold uppercase text-slate-700" data-en="Required Service" data-ar="الخدمة المطلوبة">Required Service</label>
               <select id="service" name="service" class="mt-1 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary">
-                <option value="General Enquiry">General Enquiry</option>
+                <option value="Full Attestation (Home Country + UAE MOFA)">Full Attestation (Home Country + UAE MOFA)</option>
+                <option value="Legal Translation">Legal Translation (All Purposes)</option>
                 <option value="Family Visa">Family Visa</option>
                 <option value="Family Visa Renewal">Family Visa Renewal</option>
-                <option value="Newborn Baby Residency">Newborn Baby Residency</option>
-                <option value="Emirates ID Typing">Emirates ID Typing</option>
-                <option value="Visa Medical Typing">Visa Medical Typing</option>
-                <option value="Legal Translation">Legal Translation</option>
-                <option value="Certificate Attestation">Certificate Attestation</option>
                 <option value="Police Clearance">Police Clearance</option>
-                <option value="Lost Passport Certificate">Lost Passport Certificate</option>
+                <option value="Emirates ID / Medical Typing">Emirates ID / Medical Typing</option>
+                <option value="General Enquiry">General Enquiry</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label for="message" class="block text-xs font-bold uppercase text-slate-700">Message / Requirements</label>
+            <label for="message" class="block text-xs font-bold uppercase text-slate-700" data-en="Message / Requirements" data-ar="التفاصيل / ملاحظات">Message / Requirements</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us about your document requirements..." class="mt-1 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary"></textarea>
           </div>
 
           <button type="submit" class="inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-md bg-brand-primary px-6 text-sm font-semibold text-white shadow-button transition-all duration-300 hover:bg-slate-800">
-            <i data-lucide="send" class="w-4 h-4"></i> Submit Request
+            <i data-lucide="send" class="w-4 h-4"></i> <span data-en="Submit Request" data-ar="إرسال الطلب">Submit Request</span>
           </button>
         </form>
       </div>
@@ -451,8 +546,8 @@
       <!-- Contact Info Right -->
       <div class="bg-brand-primary p-7 text-white sm:p-12 lg:p-14 flex flex-col justify-between">
         <div>
-          <h3 class="text-2xl font-extrabold">Direct Details</h3>
-          <p class="mt-2 text-sm text-slate-300">Or reach out directly via WhatsApp or Phone for immediate help.</p>
+          <h3 class="text-2xl font-extrabold" data-en="Direct Details" data-ar="معلومات التواصل Direct">Direct Details</h3>
+          <p class="mt-2 text-sm text-slate-300" data-en="Reach out directly via WhatsApp or Phone for immediate assistance." data-ar="تواصل معنا مباشرة للحصول على مساعدة فورية.">Reach out directly via WhatsApp or Phone for immediate assistance.</p>
 
           <div class="mt-8 space-y-6 text-sm">
             <a href="https://wa.me/971508979376" target="_blank" rel="noreferrer" class="flex items-center gap-4 transition-opacity hover:opacity-80">
@@ -469,24 +564,18 @@
             </a>
             <div class="flex items-center gap-4">
               <i data-lucide="clock-3" class="w-5 h-5 text-brand-secondary"></i>
-              <span><span class="block text-slate-400">Opening hours</span><span class="mt-0.5 block font-semibold text-white">Monday–Saturday · 9:00am–7:00pm</span></span>
+              <span><span class="block text-slate-400" data-en="Opening hours" data-ar="ساعات العمل">Opening hours</span><span class="mt-0.5 block font-semibold text-white" data-en="Monday–Saturday · 9:00am–7:00pm" data-ar="الإثنين – السبت · 9:00am–7:00pm">Monday–Saturday · 9:00am–7:00pm</span></span>
             </div>
           </div>
         </div>
 
-        <!-- Custom Instagram QR Code Section -->
         <div class="mt-10 pt-6 border-t border-slate-700/80 flex items-center gap-5">
           <div class="bg-white p-2 rounded-lg shrink-0 shadow-md">
-            <img 
-              src="quickdocsuae_qr.jpg" 
-              alt="Instagram QR Code" 
-              class="h-20 w-20 object-contain rounded" 
-              onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?text=QR+Code';"
-            />
+            <img src="quickdocsuae_qr.jpg" alt="Instagram QR Code" class="h-20 w-20 object-contain rounded" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?text=QR+Code';" />
           </div>
           <div>
-            <p class="text-xs text-slate-400 font-medium">Scan with your camera</p>
-            <p class="font-bold text-sm text-white mt-0.5">Follow us on Instagram</p>
+            <p class="text-xs text-slate-400 font-medium" data-en="Scan with your camera" data-ar="امسح بالكاميرا">Scan with your camera</p>
+            <p class="font-bold text-sm text-white mt-0.5" data-en="Follow us on Instagram" data-ar="تابعنا على إنستغرام">Follow us on Instagram</p>
             <p class="text-xs text-brand-secondary font-semibold mt-1">@quickdocsuae</p>
           </div>
         </div>
@@ -495,29 +584,76 @@
     </div>
   </section>
 
+  <!-- GOOGLE MAPS EMBED -->
+  <section class="border-t border-slate-200 bg-slate-50 py-12">
+    <div class="mx-auto max-w-7xl px-5 text-center sm:px-8">
+      <h2 class="text-xl font-bold text-slate-900" data-en="Serving Clients Across Dubai & UAE" data-ar="نخدم جميع العملاء في دبي والإمارات">Serving Clients Across Dubai & UAE</h2>
+      <p class="mt-1 text-sm text-slate-600 mb-6" data-en="Fast document pickup, online typing, and embassy submission support." data-ar="استلام المستندات، خدمات أونلاين، والتصديقات الحكومية بسرعات قياسية.">Fast document pickup, online typing, and embassy submission support.</p>
+      <div class="w-full h-72 rounded-xl overflow-hidden shadow-md border border-slate-200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.5!2d55.2708!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJ0E3LjIiTiA1NcKwMTYnMTQuOSJF!5e0!3m2!1sen!2sae!4v1600000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="border-t border-slate-200 bg-surface-raised">
     <div class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
       <a href="#top" class="flex items-center gap-2" aria-label="Quick Docs home">
-        <img 
-          src="IMG_0216.jpg" 
-          alt="Quick Docs Logo" 
-          class="h-10 w-auto max-h-10 object-contain" 
-          onerror="this.onerror=null; this.src='https://placehold.co/140x40/0f172a/ffffff?text=Quick+Docs';"
-        />
+        <img src="IMG_0216.jpg" alt="Quick Docs Logo" class="h-10 w-auto max-h-10 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/140x40/0f172a/ffffff?text=Quick+Docs';" />
       </a>
-      <p class="text-xs text-slate-500">© 2026 Quick Docs UAE. Professional typing & visa services.</p>
+      <p class="text-xs text-slate-500">© 2026 Quick Docs UAE. Professional visa, attestation & translation services.</p>
     </div>
   </footer>
 
-  <!-- FLOATING MOBILE WHATSAPP BUTTON -->
-  <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20Quick%20Docs%20service." target="_blank" rel="noreferrer" aria-label="Chat with Quick Docs on WhatsApp" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-brand-whatsapp px-4 py-3 text-sm font-bold text-white shadow-xl sm:hidden">
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20service." target="_blank" rel="noreferrer" aria-label="Chat with Quick Docs on WhatsApp" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-brand-whatsapp px-4 py-3 text-sm font-bold text-white shadow-xl sm:hidden">
     <i data-lucide="message-circle" class="w-5 h-5"></i> WhatsApp
   </a>
 
-  <!-- Initialize Lucide Icons -->
+  <!-- SCRIPTS -->
   <script>
+    // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Toggle FAQ Accordion
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Interactive WhatsApp Quote Builder Link Generator
+    function sendWhatsAppQuote() {
+      const service = document.getElementById('qbService').value;
+      const count = document.getElementById('qbCount').value;
+      const speed = document.getElementById('qbSpeed').value;
+
+      const message = `Hello Quick Docs UAE,\n\nI would like a fast quote for:\n• Service: ${service}\n• Count: ${count}\n• Priority: ${speed}\n\nPlease advise on document requirements and current timeline.`;
+      const encodedMsg = encodeURIComponent(message);
+      window.open(`https://wa.me/971508979376?text=${encodedMsg}`, '_blank');
+    }
+
+    // Language Toggle Switcher (English / Arabic)
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('langText').innerText = currentLang === 'en' ? 'العربية' : 'English';
+
+      const elements = document.querySelectorAll('[data-en]');
+      elements.forEach(el => {
+        const text = el.getAttribute(`data-${currentLang}`);
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+          } else {
+            el.innerHTML = text;
+          }
+        }
+      });
+      lucide.createIcons();
+    }
   </script>
 </body>
 </html>
