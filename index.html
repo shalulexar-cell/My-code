@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -158,6 +162,67 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
+
+<style id="quickdocs-service-animations">
+/* Quick Docs: subtle service animations — intentionally lightweight */
+.service-card, .service-item, .card {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.service-card:hover, .service-item:hover, .card:hover {
+  transform: translateY(-4px);
+}
+.service-card img, .service-item img, .card img {
+  transition: transform .35s ease;
+}
+.service-card:hover img, .service-item:hover img, .card:hover img {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .service-item, .card,
+  .service-card img, .service-item img, .card img {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+</style>
+
+
+<style id="quickdocs-animated-services">
+#quickdocs-services.qd-services{position:relative;overflow:hidden;padding:92px 20px;background:linear-gradient(180deg,#faf9ff 0%,#f5f2ff 100%);isolation:isolate}
+#quickdocs-services .qd-services-bg{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(108,64,180,.14),transparent 68%);top:-220px;right:-180px;z-index:-1;animation:qdFloat 9s ease-in-out infinite}
+#quickdocs-services .qd-services-container{max-width:1180px;margin:auto}
+#quickdocs-services .qd-services-heading{text-align:center;max-width:720px;margin:0 auto 46px}
+#quickdocs-services .qd-eyebrow{display:inline-block;font-size:12px;letter-spacing:2.5px;font-weight:800;color:#6c3bb2;margin-bottom:12px}
+#quickdocs-services h2{margin:0 0 14px;font-size:clamp(30px,4vw,46px);line-height:1.08;color:#171226}
+#quickdocs-services .qd-services-heading p{margin:0;color:#625d70;font-size:16px;line-height:1.7}
+#quickdocs-services .qd-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+#quickdocs-services .qd-service-card{position:relative;min-height:335px;padding:28px 24px 23px;border:1px solid rgba(100,78,140,.12);border-radius:24px;background:rgba(255,255,255,.9);box-shadow:0 10px 30px rgba(42,27,76,.07);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
+#quickdocs-services .qd-service-card:before{content:"";position:absolute;inset:-80px auto auto -80px;width:180px;height:180px;border-radius:50%;background:rgba(108,59,178,.08);transition:transform .45s ease}
+#quickdocs-services .qd-service-card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#6c3bb2,#a56ee8);transform:scaleX(.15);transform-origin:left;transition:transform .4s ease}
+#quickdocs-services .qd-service-card:hover{transform:translateY(-9px);box-shadow:0 22px 50px rgba(42,27,76,.15);border-color:rgba(108,59,178,.25)}
+#quickdocs-services .qd-service-card:hover:before{transform:scale(1.8)}
+#quickdocs-services .qd-service-card:hover:after{transform:scaleX(1)}
+#quickdocs-services .qd-service-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;font-size:27px;background:#f0eaff;margin-bottom:22px;box-shadow:inset 0 0 0 1px rgba(108,59,178,.08);transition:transform .4s ease}
+#quickdocs-services .qd-service-card:hover .qd-service-icon{transform:translateY(-3px) rotate(-3deg)}
+#quickdocs-services .qd-service-number{position:absolute;right:22px;top:24px;font-size:12px;font-weight:800;letter-spacing:1px;color:#aaa3b5}
+#quickdocs-services h3{position:relative;margin:0 0 10px;font-size:21px;color:#1d1830}
+#quickdocs-services .qd-service-card p{position:relative;margin:0;color:#6b6675;font-size:14px;line-height:1.65}
+#quickdocs-services .qd-service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+#quickdocs-services .qd-service-tags span{font-size:10px;font-weight:700;padding:6px 8px;border-radius:999px;background:#f5f2fa;color:#625a70}
+#quickdocs-services .qd-service-link{position:relative;margin-top:auto;padding:14px 0 0;border:0;background:none;text-align:left;font:inherit;font-size:13px;font-weight:800;color:#6536a8;cursor:pointer}
+#quickdocs-services .qd-service-link span{display:inline-block;margin-left:5px;transition:transform .25s ease}
+#quickdocs-services .qd-service-link:hover span{transform:translateX(5px)}
+#quickdocs-services .qd-blue .qd-service-icon{background:#e9f2ff}.qd-blue .qd-service-link{color:#2768ad}
+#quickdocs-services .qd-indigo .qd-service-icon{background:#ececff}.qd-indigo .qd-service-link{color:#4d4eb1}
+#quickdocs-services .qd-violet .qd-service-icon{background:#f3eaff}.qd-violet .qd-service-link{color:#7b3fba}
+#quickdocs-services .qd-slate .qd-service-icon{background:#edf0f5}.qd-slate .qd-service-link{color:#43546b}
+#quickdocs-services .qd-gold .qd-service-icon{background:#fff4da}.qd-gold .qd-service-link{color:#9a6810}
+@keyframes qdFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-20px,20px,0)}}
+@media(max-width:1050px){#quickdocs-services .qd-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){#quickdocs-services.qd-services{padding:68px 16px}#quickdocs-services .qd-service-grid{grid-template-columns:1fr;gap:16px}#quickdocs-services .qd-service-card{min-height:300px;padding:24px 21px}.qd-services-heading{margin-bottom:32px!important}}
+@media(prefers-reduced-motion:reduce){#quickdocs-services .qd-services-bg,#quickdocs-services .qd-service-card,#quickdocs-services .qd-service-card:before,#quickdocs-services .qd-service-card:after,#quickdocs-services .qd-service-icon,#quickdocs-services .qd-service-link span{animation:none!important;transition:none!important}}
+</style>
+
 </head>
 
 <body id="top" class="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -297,7 +362,110 @@
   </section>
 
   <!-- SERVICES SECTION -->
-  <section id="services" class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+  
+<!-- Quick Docs UAE — Animated Services Section -->
+<section id="quickdocs-services" class="qd-services" aria-labelledby="qd-services-title">
+  <div class="qd-services-bg"></div>
+  <div class="qd-services-container">
+    <div class="qd-services-heading">
+      <span class="qd-eyebrow">OUR SERVICES</span>
+      <h2 id="qd-services-title">Professional Document Services in the UAE</h2>
+      <p>From certificate attestation to medical typing, we make your document process simple, clear and hassle-free.</p>
+    </div>
+
+    <div class="qd-service-grid">
+      <article class="qd-service-card qd-purple">
+        <div class="qd-service-icon">📜</div>
+        <span class="qd-service-number">01</span>
+        <h3>Certificate Attestation</h3>
+        <p>Degree, diploma, educational, birth, marriage and personal document attestation.</p>
+        <div class="qd-service-tags">
+          <span>Degree</span><span>Diploma</span><span>Birth</span><span>Marriage</span><span>MOFA</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Certificate Attestation">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-blue">
+        <div class="qd-service-icon">🏥</div>
+        <span class="qd-service-number">02</span>
+        <h3>Medical Typing</h3>
+        <p>Convenient medical typing support for visa medical and OHC applications.</p>
+        <div class="qd-service-tags">
+          <span>Visa Medical</span><span>OHC Applications</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Medical Typing / OHC Application">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-indigo">
+        <div class="qd-service-icon">🛂</div>
+        <span class="qd-service-number">03</span>
+        <h3>Family Visa Services</h3>
+        <p>Typing and document support for family visa sponsorship and renewal requirements.</p>
+        <div class="qd-service-tags">
+          <span>Family Sponsorship</span><span>Renewal</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Family Visa Services">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-violet">
+        <div class="qd-service-icon">🌐</div>
+        <span class="qd-service-number">04</span>
+        <h3>Legal Translation</h3>
+        <p>Professional document translation support for official and legal requirements.</p>
+        <div class="qd-service-tags">
+          <span>Legal Documents</span><span>Official Use</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Legal Translation">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-slate">
+        <div class="qd-service-icon">🛡️</div>
+        <span class="qd-service-number">05</span>
+        <h3>Police Clearance</h3>
+        <p>Support with Police Clearance Certificate requirements and application processing.</p>
+        <div class="qd-service-tags">
+          <span>PCC</span><span>Document Support</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Police Clearance Certificate">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-gold">
+        <div class="qd-service-icon">🪪</div>
+        <span class="qd-service-number">06</span>
+        <h3>Emirates ID Services</h3>
+        <p>Typing and document assistance for Emirates ID-related applications and requirements.</p>
+        <div class="qd-service-tags">
+          <span>Typing</span><span>Applications</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Emirates ID Services">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-purple">
+        <div class="qd-service-icon">🎓</div>
+        <span class="qd-service-number">07</span>
+        <h3>Certificate Equivalency</h3>
+        <p>Assistance with Indian qualification equivalency and related document requirements.</p>
+        <div class="qd-service-tags">
+          <span>Indian Qualifications</span><span>Equivalency</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="Certificate Equivalency">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-blue">
+        <div class="qd-service-icon">📚</div>
+        <span class="qd-service-number">08</span>
+        <h3>Full Document Support</h3>
+        <p>Need help with a different document? Tell us what you need and we'll guide you.</p>
+        <div class="qd-service-tags">
+          <span>Document Support</span><span>UAE Services</span>
+        </div>
+        <button type="button" class="qd-service-link" data-service="General Document Support">Enquire on WhatsApp <span>→</span></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
     <div class="max-w-2xl">
       <p class="text-sm font-bold uppercase text-brand-secondary" data-en="Our services" data-ar="خدماتنا">Our services</p>
       <h2 class="mt-3 text-3xl font-extrabold text-brand-primary sm:text-4xl" data-en="Complete document & visa solutions in Dubai." data-ar="حلول كاملة للمستندات والتأشيرات في دبي">Complete document & visa solutions in Dubai.</h2>
@@ -497,7 +665,7 @@
         <p class="mt-3 text-sm leading-6 text-slate-600" data-en="Fill out your details below and our team will get back to you promptly." data-ar="أدخل بياناتك وسيقوم فريقنا بالتواصل معك في أقرب وقت.">Fill out your details below and our team will get back to you promptly.</p>
         
         <!-- FormSubmit Integration -->
-        <form action="https://formsubmit.co/el/ledoka" method="POST" class="mt-8 space-y-4">
+        <form action="#" method="post" data-whatsapp-form="true" class="mt-8 space-y-4">
           <input type="text" name="_honey" style="display:none">
           <input type="hidden" name="_subject" value="New Service Enquiry - QuickDocsUAE">
           <input type="hidden" name="_template" value="table">
@@ -655,5 +823,68 @@
       lucide.createIcons();
     }
   </script>
+
+<script id="quickdocs-whatsapp-form-handler">
+(function () {
+  const form = document.querySelector('form[data-whatsapp-form="true"]');
+  if (!form) return;
+
+  const WHATSAPP_NUMBER = '971508979376';
+
+  function getValue(selectors) {
+    for (const selector of selectors) {
+      const el = form.querySelector(selector);
+      if (el && String(el.value || '').trim()) return String(el.value).trim();
+    }
+    return '';
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = getValue(['[name="name"]', '#name', 'input[type="text"]']);
+    const phone = getValue(['[name="phone"]', '[name="whatsapp"]', '#phone', 'input[type="tel"]']);
+    const email = getValue(['[name="email"]', '#email', 'input[type="email"]']);
+    const service = getValue(['[name="service"]', '#service', 'select']);
+    const message = getValue(['[name="message"]', '[name="requirements"]', '#message', 'textarea']);
+
+    if (!name || !phone) {
+      alert('Please enter your name and WhatsApp/phone number.');
+      return;
+    }
+
+    const text =
+      '*New Enquiry – Quick Docs UAE*\\n\\n' +
+      '*Name:* ' + name + '\\n' +
+      '*Phone/WhatsApp:* ' + phone + '\\n' +
+      (email ? '*Email:* ' + email + '\\n' : '') +
+      (service ? '*Service:* ' + service + '\\n' : '') +
+      (message ? '*Requirements:* ' + message + '\\n' : '') +
+      '\\nPlease assist with this enquiry.';
+
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+})();
+</script>
+
+
+<!-- Quick Docs UAE Instagram -->
+<a href="https://www.instagram.com/quickdocsuae?stkn=cHBwbDZ3d2xzM3do" target="_blank" rel="noopener noreferrer" aria-label="Quick Docs UAE on Instagram">Instagram</a>
+
+
+<script id="quickdocs-service-whatsapp">
+(function(){
+  const number='971508979376';
+  document.querySelectorAll('#quickdocs-services [data-service]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      const service=this.getAttribute('data-service');
+      const message='Hello Quick Docs UAE,\n\nI would like to enquire about:\n*'+service+'*\n\nPlease share the requirements and details.';
+      window.open('https://wa.me/'+number+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
