@@ -219,6 +219,27 @@
 @media(max-width:1050px){#services .qd-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){#services.qd-services{padding:68px 16px}#services .qd-service-grid{grid-template-columns:1fr;gap:16px}#services .qd-service-card{min-height:300px;padding:24px 21px}.qd-services-heading{margin-bottom:32px!important}}
 @media(prefers-reduced-motion:reduce){#services .qd-services-bg,#services .qd-service-card,#services .qd-service-card:before,#services .qd-service-card:after,#services .qd-service-icon,#services .qd-service-link span{animation:none!important;transition:none!important}}
+
+/* --- Photo-based service cards --- */
+#services .qd-service-card.qd-has-image{padding-top:0}
+#services .qd-service-image{position:relative;height:168px;margin:0 -24px 20px;overflow:hidden}
+#services .qd-service-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+#services .qd-service-card:hover .qd-service-image img{transform:scale(1.07)}
+#services .qd-service-image-placeholder{display:flex;align-items:center;justify-content:center}
+#services .qd-service-image-placeholder .qd-service-icon{margin:0;width:72px;height:72px;font-size:32px;background:rgba(255,255,255,.55);box-shadow:none}
+#services .qd-service-card.qd-has-image .qd-service-number{background:rgba(255,255,255,.94);padding:3px 9px;border-radius:999px;top:14px;right:14px;box-shadow:0 3px 10px rgba(20,10,40,.18);color:#4a4458}
+#services .qd-purple .qd-service-image-placeholder{background:linear-gradient(135deg,#f3eaff,#e2cffb)}
+#services .qd-blue .qd-service-image-placeholder{background:linear-gradient(135deg,#e9f2ff,#cfe4ff)}
+#services .qd-indigo .qd-service-image-placeholder{background:linear-gradient(135deg,#ececff,#d7d7ff)}
+#services .qd-violet .qd-service-image-placeholder{background:linear-gradient(135deg,#f3eaff,#ddc2f7)}
+#services .qd-slate .qd-service-image-placeholder{background:linear-gradient(135deg,#edf0f5,#d7dee8)}
+#services .qd-gold .qd-service-image-placeholder{background:linear-gradient(135deg,#fff4da,#ffe4a8)}
+</style>
+
+<style id="quickdocs-reviews">
+#reviews .qd-review-card{display:flex;flex-direction:column;height:100%}
+#reviews .qd-review-stars{display:flex;gap:2px}
+#reviews .qd-review-avatar{font-family:var(--font-heading);letter-spacing:.5px}
 </style>
 
 </head>
@@ -262,11 +283,19 @@
         <a href="https://wa.me/971508979376?text=Hello%20Quick%20Docs%2C%20I%20would%20like%20help%20with%20a%20service." target="_blank" rel="noreferrer" class="hidden sm:inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand-whatsapp px-5 text-sm font-semibold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 bg-brand-whatsapp-hover">
           <i data-lucide="message-circle" class="w-4 h-4"></i> <span data-en="Chat now" data-ar="تحدث معنا الان">Chat now</span>
         </a>
-        <a href="#services" class="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-md" aria-label="View services">
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
           <i data-lucide="menu" class="w-6 h-6"></i>
-        </a>
+        </button>
       </div>
     </div>
+    <nav id="mobileMenu" class="hidden flex-col gap-1 border-t border-slate-200 bg-white px-5 py-3 md:hidden">
+      <a href="#services" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="Services" data-ar="الخدمات">Services</a>
+      <a href="#quote-builder" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="Get Quote" data-ar="طلب سعر">Get Quote</a>
+      <a href="#process" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="How it works" data-ar="كيف نعمل">How it works</a>
+      <a href="#faq" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="Reviews" data-ar="آراء العملاء">Reviews</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+    </nav>
   </header>
 
   <!-- HERO SECTION -->
@@ -373,14 +402,79 @@
       <p>Clear, convenient support for attestation, typing, visa-related documentation, translation and other document requirements.</p>
     </div>
     <div class="qd-service-grid">
-      <article class="qd-service-card qd-purple"><div class="qd-service-icon"><i data-lucide="file-check-2"></i></div><span class="qd-service-number">01</span><h3>Certificate Attestation</h3><p>Support for degree, diploma, educational, birth, marriage and personal documents, including home-country, embassy/consulate and UAE MOFA attestation.</p><div class="qd-service-tags"><span>Degree</span><span>Diploma</span><span>Birth</span><span>Marriage</span><span>MOFA</span></div><button type="button" class="qd-service-link" data-service="Certificate Attestation">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-blue"><div class="qd-service-icon"><i data-lucide="stethoscope"></i></div><span class="qd-service-number">02</span><h3>Medical Typing</h3><p>Typing and application support for visa medical requirements and OHC applications.</p><div class="qd-service-tags"><span>Visa Medical</span><span>OHC</span></div><button type="button" class="qd-service-link" data-service="Medical Typing / OHC Application">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-indigo"><div class="qd-service-icon"><i data-lucide="users-round"></i></div><span class="qd-service-number">03</span><h3>Family Visa Services</h3><p>Document and typing support for family visa sponsorship and family visa renewal requirements.</p><div class="qd-service-tags"><span>Sponsorship</span><span>Renewal</span></div><button type="button" class="qd-service-link" data-service="Family Visa Services">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-violet"><div class="qd-service-icon"><i data-lucide="languages"></i></div><span class="qd-service-number">04</span><h3>Legal Translation</h3><p>Professional translation support for documents intended for official and legal use, subject to the receiving authority's requirements.</p><div class="qd-service-tags"><span>Legal Documents</span><span>Official Use</span></div><button type="button" class="qd-service-link" data-service="Legal Translation">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-slate"><div class="qd-service-icon"><i data-lucide="shield-check"></i></div><span class="qd-service-number">05</span><h3>Police Clearance Certificate</h3><p>Assistance with Police Clearance Certificate requirements, typing and document submission support.</p><div class="qd-service-tags"><span>PCC</span><span>Application Support</span></div><button type="button" class="qd-service-link" data-service="Police Clearance Certificate">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-gold"><div class="qd-service-icon"><i data-lucide="contact-round"></i></div><span class="qd-service-number">06</span><h3>Emirates ID Services</h3><p>Typing and document assistance for Emirates ID-related applications and requirements.</p><div class="qd-service-tags"><span>Typing</span><span>Applications</span></div><button type="button" class="qd-service-link" data-service="Emirates ID Services">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-purple"><div class="qd-service-icon"><i data-lucide="graduation-cap"></i></div><span class="qd-service-number">07</span><h3>Certificate Equivalency</h3><p>Assistance with certificate equivalency applications and related educational document requirements.</p><div class="qd-service-tags"><span>Equivalency</span><span>Education</span></div><button type="button" class="qd-service-link" data-service="Certificate Equivalency">Enquire on WhatsApp <span>→</span></button></article>
-      <article class="qd-service-card qd-blue"><div class="qd-service-icon"><i data-lucide="folder-check"></i></div><span class="qd-service-number">08</span><h3>Full Document Support</h3><p>Have a document requirement not listed here? Send us the details and we will guide you on the next steps.</p><div class="qd-service-tags"><span>Document Support</span><span>UAE Services</span></div><button type="button" class="qd-service-link" data-service="General Document Support">Enquire on WhatsApp <span>→</span></button></article>
+
+      <article class="qd-service-card qd-purple qd-has-image">
+        <div class="qd-service-image"><img src="service-attestation.jpg" alt="Certificate attestation document stamping" loading="lazy" /></div>
+        <span class="qd-service-number">01</span>
+        <h3>Certificate Attestation</h3>
+        <p>Support for degree, diploma, educational, birth, marriage and personal documents, including home-country, embassy/consulate and UAE MOFA attestation.</p>
+        <div class="qd-service-tags"><span>Degree</span><span>Diploma</span><span>Birth</span><span>Marriage</span><span>MOFA</span></div>
+        <button type="button" class="qd-service-link" data-service="Certificate Attestation">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-blue qd-has-image">
+        <div class="qd-service-image"><img src="service-medical.jpg" alt="Medical typing and OHC application support" loading="lazy" /></div>
+        <span class="qd-service-number">02</span>
+        <h3>Medical Typing</h3>
+        <p>Typing and application support for visa medical requirements and OHC applications.</p>
+        <div class="qd-service-tags"><span>Visa Medical</span><span>OHC</span></div>
+        <button type="button" class="qd-service-link" data-service="Medical Typing / OHC Application">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-indigo qd-has-image">
+        <div class="qd-service-image"><img src="service-family-visa.jpg" alt="Family visa sponsorship and renewal support" loading="lazy" /></div>
+        <span class="qd-service-number">03</span>
+        <h3>Family Visa Services</h3>
+        <p>Document and typing support for family visa sponsorship and family visa renewal requirements.</p>
+        <div class="qd-service-tags"><span>Sponsorship</span><span>Renewal</span></div>
+        <button type="button" class="qd-service-link" data-service="Family Visa Services">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-violet qd-has-image">
+        <div class="qd-service-image"><img src="service-translation.jpg" alt="Certified legal translation of documents" loading="lazy" /></div>
+        <span class="qd-service-number">04</span>
+        <h3>Legal Translation</h3>
+        <p>Professional translation support for documents intended for official and legal use, subject to the receiving authority's requirements.</p>
+        <div class="qd-service-tags"><span>Legal Documents</span><span>Official Use</span></div>
+        <button type="button" class="qd-service-link" data-service="Legal Translation">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-slate qd-has-image">
+        <div class="qd-service-image"><img src="service-police-clearance.jpg" alt="Police Clearance Certificate assistance" loading="lazy" /></div>
+        <span class="qd-service-number">05</span>
+        <h3>Police Clearance Certificate</h3>
+        <p>Assistance with Police Clearance Certificate requirements, typing and document submission support.</p>
+        <div class="qd-service-tags"><span>PCC</span><span>Application Support</span></div>
+        <button type="button" class="qd-service-link" data-service="Police Clearance Certificate">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-gold qd-has-image">
+        <div class="qd-service-image"><img src="service-emirates-id.jpg" alt="Emirates ID typing and application assistance" loading="lazy" /></div>
+        <span class="qd-service-number">06</span>
+        <h3>Emirates ID Services</h3>
+        <p>Typing and document assistance for Emirates ID-related applications and requirements.</p>
+        <div class="qd-service-tags"><span>Typing</span><span>Applications</span></div>
+        <button type="button" class="qd-service-link" data-service="Emirates ID Services">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-purple qd-has-image">
+        <div class="qd-service-image qd-service-image-placeholder"><div class="qd-service-icon"><i data-lucide="graduation-cap"></i></div></div>
+        <span class="qd-service-number">07</span>
+        <h3>Certificate Equivalency</h3>
+        <p>Assistance with certificate equivalency applications and related educational document requirements.</p>
+        <div class="qd-service-tags"><span>Equivalency</span><span>Education</span></div>
+        <button type="button" class="qd-service-link" data-service="Certificate Equivalency">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
+      <article class="qd-service-card qd-blue qd-has-image">
+        <div class="qd-service-image qd-service-image-placeholder"><div class="qd-service-icon"><i data-lucide="folder-check"></i></div></div>
+        <span class="qd-service-number">08</span>
+        <h3>Full Document Support</h3>
+        <p>Have a document requirement not listed here? Send us the details and we will guide you on the next steps.</p>
+        <div class="qd-service-tags"><span>Document Support</span><span>UAE Services</span></div>
+        <button type="button" class="qd-service-link" data-service="General Document Support">Enquire on WhatsApp <span>→</span></button>
+      </article>
+
     </div>
   </div>
 </section>
@@ -561,15 +655,17 @@
           </div>
         </div>
 
-        <div class="mt-10 pt-6 border-t border-slate-700/80 flex items-center gap-5">
-          <div class="bg-white p-2 rounded-lg shrink-0 shadow-md">
-            <img src="quickdocsuae_qr.jpg" alt="Instagram QR Code" class="h-20 w-20 object-contain rounded" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?text=QR+Code';" />
-          </div>
-          <div>
-            <p class="text-xs text-slate-400 font-medium" data-en="Scan with your camera" data-ar="امسح بالكاميرا">Scan with your camera</p>
-            <p class="font-bold text-sm text-white mt-0.5" data-en="Follow us on Instagram" data-ar="تابعنا على إنستغرام">Follow us on Instagram</p>
-            <p class="text-xs text-brand-secondary font-semibold mt-1">@quickdocsuae</p>
-          </div>
+        <div class="mt-10 pt-6 border-t border-slate-700/80">
+          <a href="https://instagram.com/quickdocsuae" target="_blank" rel="noreferrer" class="flex items-center gap-5 hover:opacity-90 transition-opacity">
+            <div class="bg-white p-2 rounded-lg shrink-0 shadow-md">
+              <img src="quickdocsuae_qr.jpg" alt="Instagram QR Code" class="h-20 w-20 object-contain rounded" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?text=QR+Code';" />
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-medium" data-en="Scan with your camera" data-ar="امسح بالكاميرا">Scan with your camera</p>
+              <p class="font-bold text-sm text-white mt-0.5" data-en="Follow us on Instagram" data-ar="تابعنا على إنستغرام">Follow us on Instagram</p>
+              <p class="text-xs text-brand-secondary font-semibold mt-1">@quickdocsuae</p>
+            </div>
+          </a>
         </div>
 
       </div>
@@ -583,6 +679,78 @@
       <p class="mt-1 text-sm text-slate-600 mb-6" data-en="Fast document pickup, online typing, and embassy submission support." data-ar="استلام المستندات، خدمات أونلاين، والتصديقات الحكومية بسرعات قياسية.">Fast document pickup, online typing, and embassy submission support.</p>
       <div class="w-full h-72 rounded-xl overflow-hidden shadow-md border border-slate-200">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.5!2d55.2708!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJ0E3LjIiTiA1NcKwMTYnMTQuOSJF!5e0!3m2!1sen!2sae!4v1600000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS SECTION -->
+  <!-- NOTE: sample testimonials below — replace with your real client reviews before publishing -->
+  <section id="reviews" class="bg-white py-20 border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-bold uppercase text-brand-secondary" data-en="Client Feedback" data-ar="آراء العملاء">Client Feedback</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-brand-primary sm:text-4xl" data-en="What Our Clients Say" data-ar="ماذا يقول عملاؤنا">What Our Clients Say</h2>
+        <p class="mt-3 text-sm text-slate-600" data-en="Feedback from residents and businesses we've helped across Dubai and the UAE." data-ar="آراء من العملاء والشركات التي ساعدناها في دبي والإمارات.">Feedback from residents and businesses we've helped across Dubai and the UAE.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="qd-review-card rounded-lg border border-slate-200 bg-hero-tint p-6 shadow-sm">
+          <div class="qd-review-stars text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="mt-4 flex-1 text-sm leading-6 text-slate-700">Handled my degree attestation from start to finish and kept me updated at every stage. Everything came back fully MOFA attested exactly as promised.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <div class="qd-review-avatar grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-primary text-sm font-bold text-white">AR</div>
+            <div>
+              <p class="text-sm font-bold text-brand-primary">Ahmed R.</p>
+              <p class="text-xs text-slate-500">Certificate Attestation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qd-review-card rounded-lg border border-slate-200 bg-hero-tint p-6 shadow-sm">
+          <div class="qd-review-stars text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="mt-4 flex-1 text-sm leading-6 text-slate-700">Our family visa renewal was sorted in a few days with zero back-and-forth. They handled the medical and Emirates ID typing so we didn't have to chase anything.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <div class="qd-review-avatar grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-primary text-sm font-bold text-white">PS</div>
+            <div>
+              <p class="text-sm font-bold text-brand-primary">Priya S.</p>
+              <p class="text-xs text-slate-500">Family Visa Renewal</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qd-review-card rounded-lg border border-slate-200 bg-hero-tint p-6 shadow-sm">
+          <div class="qd-review-stars text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="mt-4 flex-1 text-sm leading-6 text-slate-700">Needed a certified legal translation accepted by Dubai Courts on short notice. Quick, accurate, and properly certified — no issues at submission.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <div class="qd-review-avatar grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-primary text-sm font-bold text-white">FA</div>
+            <div>
+              <p class="text-sm font-bold text-brand-primary">Fatima A.</p>
+              <p class="text-xs text-slate-500">Legal Translation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qd-review-card rounded-lg border border-slate-200 bg-hero-tint p-6 shadow-sm">
+          <div class="qd-review-stars text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="mt-4 flex-1 text-sm leading-6 text-slate-700">Applied for my Police Clearance Certificate through them — clear instructions on what to prepare and the whole thing was ready faster than I expected.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <div class="qd-review-avatar grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-primary text-sm font-bold text-white">JK</div>
+            <div>
+              <p class="text-sm font-bold text-brand-primary">James K.</p>
+              <p class="text-xs text-slate-500">Police Clearance Certificate</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -615,6 +783,16 @@
       icon.classList.toggle('rotate-180');
     }
 
+    // Toggle mobile navigation menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+      btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    }
+
     // Interactive WhatsApp Quote Builder Link Generator
     function sendWhatsAppQuote() {
       const service = document.getElementById('qbService').value;
@@ -631,6 +809,7 @@
     function toggleLanguage() {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
       document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = currentLang;
       document.getElementById('langText').innerText = currentLang === 'en' ? 'العربية' : 'English';
 
       const elements = document.querySelectorAll('[data-en]');
@@ -681,10 +860,10 @@
       '*New Enquiry – Quick Docs UAE*\n\n' +
       '*Name:* ' + name + '\n' +
       '*Phone/WhatsApp:* ' + phone + '\n' +
-      (email ? '*Email:* ' + email + '\\n' : '') +
-      (service ? '*Service:* ' + service + '\\n' : '') +
-      (message ? '*Requirements:* ' + message + '\\n' : '') +
-      '\\nPlease assist with this enquiry.';
+      (email ? '*Email:* ' + email + '\n' : '') +
+      (service ? '*Service:* ' + service + '\n' : '') +
+      (message ? '*Requirements:* ' + message + '\n' : '') +
+      '\nPlease assist with this enquiry.';
 
     const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
     window.open(url, '_blank', 'noopener,noreferrer');
