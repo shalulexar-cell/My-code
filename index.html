@@ -205,8 +205,44 @@
 #services .qd-service-number{position:absolute;right:22px;top:24px;font-size:12px;font-weight:800;letter-spacing:1px;color:#aaa3b5}
 #services h3{position:relative;margin:0 0 10px;font-size:21px;color:#1d1830}
 #services .qd-service-card p{position:relative;margin:0;color:#6b6675;font-size:14px;line-height:1.65}
-#services .qd-service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-#services .qd-service-tags span{font-size:10px;font-weight:700;padding:6px 8px;border-radius:999px;background:#f5f2fa;color:#625a70}
+#services .qd-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto; /* Forces all tag rows to align at the exact same height */
+  padding-top: 16px;
+}
+
+#services .qd-service-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px; /* Clean rectangular badges instead of uneven pills */
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+
+#services .qd-service-card:hover .qd-service-tags span {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+#services .qd-service-link {
+  position: relative;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px border-slate-100;
+  background: none;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  color: #6536a8;
+  cursor: pointer;
+}
 #services .qd-service-link{position:relative;margin-top:auto;padding:14px 0 0;border:0;background:none;text-align:left;font:inherit;font-size:13px;font-weight:800;color:#6536a8;cursor:pointer}
 #services .qd-service-link span{display:inline-block;margin-left:5px;transition:transform .25s ease}
 #services .qd-service-link:hover span{transform:translateX(5px)}
