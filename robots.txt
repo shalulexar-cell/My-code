@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT Search visibility is controlled by OAI-SearchBot.
+# GPTBot is separate from ChatGPT Search and is not required for search visibility.
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://quickdocsuae.com/sitemap.xml

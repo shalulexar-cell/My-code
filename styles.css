@@ -1,0 +1,34 @@
+:root{--font-body:"DM Sans",sans-serif;--font-heading:"Manrope",sans-serif;--font-arabic:"Noto Kufi Arabic",sans-serif;--primary:#0f172a;--secondary:#0284c7;--hero-tint:#f0fdf4;--border-color:#e2e8f0}
+body{font-family:var(--font-body);color:var(--primary)}
+h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
+
+.bg-hero-tint{background:var(--hero-tint)}
+.shadow-button{box-shadow:0 10px 25px -12px rgba(15,23,42,.45)}
+.reveal-up{animation:reveal-up .7s cubic-bezier(.22,1,.36,1) both}
+@keyframes reveal-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.qd-services{position:relative;overflow:hidden;background:linear-gradient(135deg,#2e1065,#581c87 52%,#312e81);color:#fff}
+.qd-services-bg{position:absolute;inset:0;background:radial-gradient(circle at 15% 15%,rgba(255,255,255,.12),transparent 30%),radial-gradient(circle at 85% 80%,rgba(255,255,255,.09),transparent 28%);pointer-events:none}
+.qd-services-container{position:relative;max-width:1180px;margin:auto}
+.qd-services-heading{text-align:center;max-width:720px;margin:auto}
+.qd-eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;color:#ddd6fe}
+.qd-services-heading h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:.55rem 0;font-weight:800}
+.qd-services-heading p{color:#e9d5ff;font-size:1.05rem}
+.qd-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.qd-service-card{position:relative;overflow:hidden;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.17);border-radius:22px;padding:24px;backdrop-filter:blur(12px);transition:.25s ease}
+.qd-service-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.qd-service-image{height:168px;margin:0 -24px 20px;overflow:hidden}
+.qd-service-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.qd-service-card:hover .qd-service-image img{transform:scale(1.04)}
+.qd-service-number{font-size:12px;font-weight:800;color:#c4b5fd}
+.qd-service-card h3{font-size:1.2rem;font-weight:800;margin-top:8px}
+.qd-service-card p{margin-top:8px;color:#ede9fe;font-size:.94rem;line-height:1.55}
+.qd-service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.qd-service-tags span{font-size:11px;font-weight:700;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.1);color:#f5f3ff}
+.qd-service-actions{display:flex;align-items:center;gap:10px;margin-top:20px}
+.qd-service-link{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#fff;font-weight:800;font-size:.9rem;flex:1}
+.qd-service-link span{transition:transform .2s ease}
+.qd-service-link:hover span{transform:translateX(4px)}
+.qd-whatsapp-mini{border:1px solid rgba(255,255,255,.22);background:rgba(22,163,74,.9);color:#fff;border-radius:10px;padding:8px 10px;font-size:11px;font-weight:800}
+@media(max-width:1050px){.qd-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.qd-service-grid{grid-template-columns:1fr}.qd-service-image{height:180px}}
+@media(prefers-reduced-motion:reduce){.reveal-up,.qd-service-card,.qd-service-image img{animation:none;transition:none}}
