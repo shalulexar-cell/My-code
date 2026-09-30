@@ -16,9 +16,9 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 .qd-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .qd-service-card{position:relative;overflow:hidden;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.17);border-radius:22px;padding:24px;backdrop-filter:blur(12px);transition:.25s ease}
 .qd-service-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.2)}
-.qd-service-image{height:168px;margin:0 -24px 20px;overflow:hidden}
-.qd-service-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
-.qd-service-card:hover .qd-service-image img{transform:scale(1.04)}
+.qd-service-image{aspect-ratio:4/3;height:auto;margin:0 -24px 20px;overflow:hidden;background:#2e1065}
+.qd-service-image img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform .35s ease}
+.qd-service-card:hover .qd-service-image img{transform:none}
 .qd-service-number{font-size:12px;font-weight:800;color:#c4b5fd}
 .qd-service-card h3{font-size:1.2rem;font-weight:800;margin-top:8px}
 .qd-service-card p{margin-top:8px;color:#ede9fe;font-size:.94rem;line-height:1.55}
@@ -30,5 +30,5 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 .qd-service-link:hover span{transform:translateX(4px)}
 .qd-whatsapp-mini{border:1px solid rgba(255,255,255,.22);background:rgba(22,163,74,.9);color:#fff;border-radius:10px;padding:8px 10px;font-size:11px;font-weight:800}
 @media(max-width:1050px){.qd-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.qd-service-grid{grid-template-columns:1fr}.qd-service-image{height:180px}}
+@media(max-width:620px){.qd-service-grid{grid-template-columns:1fr}.qd-service-image{aspect-ratio:4/3;height:auto}}
 @media(prefers-reduced-motion:reduce){.reveal-up,.qd-service-card,.qd-service-image img{animation:none;transition:none}}
