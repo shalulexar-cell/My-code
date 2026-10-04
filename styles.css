@@ -32,3 +32,26 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 @media(max-width:1050px){.qd-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.qd-service-grid{grid-template-columns:1fr}.qd-service-image{aspect-ratio:4/3;height:auto}}
 @media(prefers-reduced-motion:reduce){.reveal-up,.qd-service-card,.qd-service-image img{animation:none;transition:none}}
+
+/* Keep the desktop composition; bring services directly after the mobile intro. */
+.qd-mobile-services{display:none}
+.qd-home #services{scroll-margin-top:6rem}
+@media(max-width:767px){
+  .qd-home{display:flex;flex-direction:column}
+  .qd-home>section{min-width:0}
+  .qd-home>.qd-home-hero{order:-2}
+  .qd-home>#services{order:-1}
+  .qd-home-hero>div{padding-top:1.5rem;padding-bottom:1.5rem;gap:0}
+  .qd-home-hero .qd-hero-media{display:none}
+  .qd-home-hero .reveal-up{animation:none;opacity:1;transform:none}
+  .qd-home-hero h1{font-size:1.875rem;line-height:1.15;margin-top:1rem}
+  .qd-home-hero p{font-size:1rem;line-height:1.5;margin-top:.75rem}
+  .qd-home-hero .qd-hero-actions{margin-top:1.25rem;gap:.625rem}
+  .qd-home-hero .qd-hero-actions>a{padding:.75rem 1rem;min-height:44px}
+  .qd-home-hero .qd-desktop-quote{display:none}
+  .qd-home-hero .qd-mobile-services{display:inline-flex;align-items:center;gap:.5rem;border-radius:.75rem;background:#0f172a;color:#fff;font-weight:700}
+  .qd-home-hero .qd-hero-benefits{margin-top:1rem;gap:.5rem 1rem;font-size:.75rem}
+  .qd-home>#services{padding-top:2rem;padding-bottom:2rem}
+  .qd-home .qd-services-heading h2{font-size:1.75rem}
+  .qd-home .qd-service-grid{margin-top:1.5rem}
+}
