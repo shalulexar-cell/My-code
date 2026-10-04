@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded",function(){
-  if(window.lucide) lucide.createIcons();
 
   const form=document.querySelector('form[data-whatsapp-form="true"]');
   if(form){
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 function toggleFaq(btn){
   const content=btn.nextElementSibling;
-  const icon=btn.querySelector("i");
+  const icon=btn.querySelector("svg");
   const open=content.classList.toggle("hidden")===false;
   btn.setAttribute("aria-expanded",open?"true":"false");
   if(icon) icon.classList.toggle("rotate-180");
@@ -56,3 +55,4 @@ I would like a fast quote for:
 Please advise on document requirements and current timeline.`;
   window.open("https://wa.me/971508979376?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
 }
+

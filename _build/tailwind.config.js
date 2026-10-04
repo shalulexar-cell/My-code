@@ -1,5 +1,7 @@
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
 module.exports = {
-  content: ["../*.html", "../*/*.html", "../script.js"],
+  content: [path.join(root, '*.html'), path.join(root, 'ar/*.html'), path.join(root, 'articles/*.html'), path.join(root, 'services/*.html'), path.join(root, 'script.js')],
   theme: { extend: {} },
   plugins: [],
 };

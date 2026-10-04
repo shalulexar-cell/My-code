@@ -1,10 +1,13 @@
-Optional: replace the Tailwind CDN script with compiled CSS (faster, no flash of unstyled content).
+The public site uses assets/site.css, compiled from HTML classes and styles.css.
+No Tailwind script runs in visitors' browsers.
 
-1. In this folder run:   npm i -D tailwindcss@3
-2. Then run:             npx tailwindcss -c tailwind.config.js -i input.css -o ../tailwind.css --minify
-3. In every .html file replace
-       <script src="https://cdn.tailwindcss.com"></script>
-   with
-       <link rel="stylesheet" href="/tailwind.css">
-   (e.g.  find .. -name "*.html" -exec sed -i 's#<script src="https://cdn.tailwindcss.com"></script>#<link rel="stylesheet" href="/tailwind.css">#' {} +  )
-4. Re-run step 2 whenever you add new Tailwind classes. Do not upload the _build folder.
+After editing HTML classes, script.js classes, or styles.css:
+  npm install --prefix _build
+  npm run build --prefix _build
+
+Commit the updated HTML, styles.css source, and assets/site.css together.
+Do not commit node_modules. The _build directory is source tooling, not a runtime dependency.
+
+Fonts are local WOFF2 files with font-display: optional. Their OFL licences are in assets/fonts.
+Icons are inline SVG from Lucide 0.469.0; its licence is in assets/lucide-LICENSE.txt.
+Original JPEGs remain for existing links and social metadata; img tags use WebP variants.
