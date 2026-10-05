@@ -154,3 +154,8 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
   .qd-home~footer>div:first-child{grid-template-columns:repeat(2,minmax(0,1fr))}
   .qd-home~footer>div:first-child>div:first-child,.qd-home~footer>div:first-child>div:last-child{grid-column:1 / -1}
 }
+
+/* Extend the service link across its card; keep WhatsApp independently clickable. */
+.qd-service-card .qd-service-link::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.qd-service-card .qd-whatsapp-mini{position:relative;z-index:2}
+.qd-service-card:has(.qd-service-link:focus-visible){outline:3px solid #fff;outline-offset:3px}
