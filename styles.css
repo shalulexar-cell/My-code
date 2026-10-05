@@ -159,3 +159,8 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 .qd-service-card .qd-service-link::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
 .qd-service-card .qd-whatsapp-mini{position:relative;z-index:2}
 .qd-service-card:has(.qd-service-link:focus-visible){outline:3px solid #fff;outline-offset:3px}
+
+/* Native image and title links support direct touch navigation on mobile. */
+.qd-service-image-link{display:block;position:relative;z-index:2}
+.qd-service-title-link{position:relative;z-index:2}
+.qd-service-image-link:focus-visible,.qd-service-title-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
