@@ -80,3 +80,19 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 
 /* Keep exported pages legible without gradient or backdrop compositing. */
 @media print{.qd-services{background-image:none}.qd-services-bg{display:none}.qd-service-card{backdrop-filter:none;background-color:#492777}}
+
+/* Compact phone cards keep each service readable with less scrolling. */
+@media(max-width:620px){
+  .qd-service-grid{gap:12px}
+  .qd-service-card{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:14px;row-gap:8px;padding:16px;border-radius:18px;align-content:start}
+  .qd-service-card:hover{transform:none}
+  .qd-service-image{grid-column:1;grid-row:1 / 3;width:88px;height:88px;aspect-ratio:1;margin:0;border-radius:12px;align-self:start}
+  .qd-service-image img{object-fit:cover}
+  .qd-service-number{display:none}
+  .qd-service-card h3{grid-column:2;margin:0;font-size:1rem;line-height:1.3}
+  .qd-service-card p{grid-column:2;margin:0;font-size:.875rem;line-height:1.45}
+  .qd-service-tags{grid-column:1 / -1;margin-top:2px;gap:6px}
+  .qd-service-actions{grid-column:1 / -1;margin-top:0;gap:12px}
+  .qd-service-link{min-height:44px;font-size:.875rem}
+  .qd-whatsapp-mini{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px}
+}
