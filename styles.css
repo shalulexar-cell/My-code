@@ -96,3 +96,61 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
   .qd-service-link{min-height:44px;font-size:.875rem}
   .qd-whatsapp-mini{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px}
 }
+
+/* Phone-scale spacing throughout both homepages; retain desktop sizing. */
+@media(max-width:767px){
+  .qd-home>section:not(.qd-home-hero){padding-block:28px}
+  .qd-home h2{font-size:1.5rem;line-height:1.25}
+  .qd-home h3{font-size:1.0625rem;line-height:1.35}
+  .qd-home p{line-height:1.5}
+  .qd-home .text-lg{font-size:1rem}
+  .qd-home :is(.mt-6,.mt-7,.mt-8,.mt-9,.mt-10){margin-top:18px}
+  .qd-home :is(.gap-5,.gap-6){gap:12px}
+  .qd-home :is(.gap-8,.gap-10){gap:20px}
+  .qd-home :is(.p-5,.p-6,.p-7){padding:16px}
+  .qd-home .grid>*{min-width:0}
+  .qd-home-hero>div{padding-block:20px}
+  .qd-home-hero h1{font-size:1.625rem;line-height:1.2;margin-top:12px}
+  .qd-home-hero .reveal-up>span{font-size:.75rem;padding:6px 10px}
+  .qd-home-hero .qd-hero-actions{margin-top:16px;gap:8px}
+  .qd-home-hero .qd-hero-actions>a{font-size:.875rem;padding:10px 12px}
+  .qd-home .qd-services-heading h2{font-size:1.5rem}
+  .qd-home .qd-services-heading p{font-size:.9375rem}
+  .qd-home .qd-service-card h3{font-size:1rem}
+  .qd-home .qd-service-tags{margin-top:2px}
+  .qd-home .qd-service-actions{margin-top:0}
+  .qd-home #why-quickdocs .grid>div{display:grid;grid-template-columns:24px minmax(0,1fr);gap:6px 12px}
+  .qd-home #why-quickdocs .grid>div>svg{grid-column:1;grid-row:1 / 3}
+  .qd-home #why-quickdocs .grid>div>:is(h3,p){grid-column:2;margin:0}
+  .qd-home #resources .grid>a{padding:14px 16px}
+  .qd-home #resources .grid h3{font-size:1rem}
+  .qd-home #resources .grid p{font-size:.9375rem;margin-top:4px}
+  .qd-home #how-it-works .grid>div{display:grid;grid-template-columns:32px minmax(0,1fr);gap:6px 12px}
+  .qd-home #how-it-works .grid>div>div{grid-column:1;grid-row:1 / 3;width:32px;height:32px;border-radius:8px}
+  .qd-home #how-it-works .grid>div>:is(h3,p){grid-column:2;margin:0}
+  .qd-home #faq button{padding:14px 16px;min-height:48px}
+  .qd-home #faq button+div{padding-inline:16px;padding-bottom:16px}
+  .qd-home :is(input,select,textarea){min-width:0;width:100%;font-size:16px}
+  .qd-home :is(input,select){min-height:44px;padding:10px 12px}
+  .qd-home textarea{height:112px;min-height:96px;resize:vertical}
+  .qd-home #contact .space-y-4>*{overflow-wrap:anywhere}
+  .qd-home #contact .space-y-4>*>svg{flex-shrink:0}
+  .qd-home #contact form .grid{gap:10px}
+  .qd-home .ar-card{padding:14px 16px}
+  body:has(>.qd-home)>header>div:first-child{gap:8px;padding-block:8px}
+  body:has(>.qd-home)>header>div:first-child>a{gap:6px;min-width:0;flex-shrink:1}
+  body:has(>.qd-home)>header img{width:36px;height:36px}
+  body:has(>.qd-home)>header .text-lg{font-size:1rem}
+  body:has(>.qd-home)>header .text-xs{font-size:.625rem}
+  body:has(>.qd-home)>header button{min-width:44px;min-height:44px}
+  body:has(>.qd-home)>header a[lang]{min-height:44px;padding-inline:8px;align-items:center}
+  body:has(>.qd-home) #mobileMenu a{min-height:44px;display:flex;align-items:center}
+  .qd-home~footer>div:first-child{padding-block:24px;gap:20px}
+  .qd-home~footer>div:first-child>div{min-width:0;overflow-wrap:anywhere}
+  .qd-home~footer>div:last-child{padding:16px}
+  .qd-home~footer a{display:inline-block;padding-block:4px}
+}
+@media(min-width:360px) and (max-width:767px){
+  .qd-home~footer>div:first-child{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .qd-home~footer>div:first-child>div:first-child,.qd-home~footer>div:first-child>div:last-child{grid-column:1 / -1}
+}
