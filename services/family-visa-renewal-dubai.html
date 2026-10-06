@@ -83,8 +83,22 @@
     if(n.adultChild) docs+='<div class="rounded-xl border p-4"><strong>Adult son / daughter × '+n.adultChild+'</strong><ul class="mt-2 list-disc pl-5 text-sm space-y-1"><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Additional eligibility/supporting documents may be required</li></ul></div>';
     if(n.parent) docs+='<div class="rounded-xl border p-4"><strong>Parent × '+n.parent+'</strong><ul class="mt-2 list-disc pl-5 text-sm space-y-1"><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Tenancy / Ejari</li><li>Additional parent-renewal documents may be required</li></ul></div>';
     $('#qd-docs').innerHTML=docs||'<p class="text-sm text-slate-500">Add a dependant to see the document checklist.</p>';
-    const summary='Family visa renewal | Spouse: '+n.spouse+', Children under 18: '+n.minor+', Adult children: '+n.adultChild+', Parents: '+n.parent+' | Government: '+money(g)+' | QuickDocs incl VAT: '+money(s)+' | Deposit: AED 0.00 | Estimate: '+money(g+s)+(uncertain?' | Family file needs verification':'');
-    $('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent('Hello QuickDocs UAE, I calculated this renewal quote on your website:\n'+summary+'\nPlease verify my eligibility, documents and final amount.');
+    const applicants=[];
+    if(n.spouse) applicants.push('• Spouse: '+n.spouse);
+    if(n.minor) applicants.push('• Child under 18: '+n.minor);
+    if(n.adultChild) applicants.push('• Adult child: '+n.adultChild);
+    if(n.parent) applicants.push('• Parent: '+n.parent);
+    const message='*QuickDocs UAE – Family Visa Renewal Quote*\n\n'
+      +'*Application:* Family Visa Renewal\n\n'
+      +'*Applicants*\n'+(applicants.length?applicants.join('\n'):'• No applicants selected')+'\n\n'
+      +'*Estimated Fees*\n'
+      +'Government Fees: '+money(g)+'\n'
+      +'QuickDocs Service + VAT: '+money(s)+'\n'
+      +'Refundable Deposit: Not applicable\n\n'
+      +'*Estimated Payable: '+money(g+s)+'*'
+      +(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')
+      +'\n\nPlease verify my eligibility, required documents and final amount.';
+    $('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(message);
   }
   r.querySelectorAll('.qd-plus,.qd-minus').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;n[k]=Math.max(0,Math.min(10,n[k]+(b.classList.contains('qd-plus')?1:-1)));r.querySelector('[data-count="'+k+'"]').textContent=n[k];render()}));
   r.querySelectorAll('select').forEach(x=>x.addEventListener('change',render)); render();

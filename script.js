@@ -7,13 +7,15 @@ document.addEventListener("DOMContentLoaded",function(){
       const get=n=>(form.querySelector(`[name="${n}"]`)?.value||"").trim();
       const name=get("name"),phone=get("phone"),email=get("email"),service=get("service"),message=get("message");
       if(!name||!phone){alert("Please enter your name and phone / WhatsApp number.");return;}
-      const text="*New Enquiry – QuickDocs UAE*\n\n"+
+      const text="*QuickDocs UAE – New Enquiry*\n\n"+
+        "*Customer Details*\n"+
         "*Name:* "+name+"\n"+
-        "*Phone/WhatsApp:* "+phone+"\n"+
+        "*Phone / WhatsApp:* "+phone+"\n"+
         (email?"*Email:* "+email+"\n":"")+
+        "\n*Enquiry*\n"+
         (service?"*Service:* "+service+"\n":"")+
         (message?"*Requirements:* "+message+"\n":"")+
-        "\nPlease assist with this enquiry.";
+        "\nPlease confirm the requirements, applicable fees and next steps.";
       window.open("https://wa.me/971508979376?text="+encodeURIComponent(text),"_blank","noopener,noreferrer");
     });
   }
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("#services [data-service]").forEach(btn=>{
     btn.addEventListener("click",function(){
       const service=this.getAttribute("data-service");
-      const message="Hello QuickDocs UAE,\n\nI would like to enquire about:\n*"+service+"*\n\nPlease share the requirements and details.";
+      const message="*QuickDocs UAE – Service Enquiry*\n\n*Service:* "+service+"\n\nPlease share the required documents, applicable fees and next steps.";
       window.open("https://wa.me/971508979376?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
     });
   });
@@ -45,14 +47,13 @@ function sendWhatsAppQuote(){
   const service=document.getElementById("qbService").value;
   const count=document.getElementById("qbCount").value;
   const speed=document.getElementById("qbSpeed").value;
-  const message=`Hello QuickDocs UAE,
+  const message=`*QuickDocs UAE – Fast Quote Request*
 
-I would like a fast quote for:
-• Service: ${service}
-• Count: ${count}
-• Priority: ${speed}
+*Service:* ${service}
+*Quantity:* ${count}
+*Priority:* ${speed}
 
-Please advise on document requirements and current timeline.`;
+Please share the required documents, applicable fees and current processing timeline.`;
   window.open("https://wa.me/971508979376?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
 }
 
