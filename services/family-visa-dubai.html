@@ -87,17 +87,19 @@
 .qd-result-head{border:1px solid #bbf7d0;background:#f0fdf4;border-radius:1rem;padding:1rem}
 .qd-result-head .qd-result-title{font-size:1.12rem;font-weight:800;color:#166534}
 .qd-result-head .qd-result-sub{margin-top:.3rem;color:#475569;font-size:.9rem}
-.qd-result-totals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:.85rem}
-.qd-result-stat{border:1px solid #e2e8f0;border-radius:.9rem;padding:.85rem;background:#fff}
-.qd-result-stat span{font-size:.78rem;color:#64748b}
-.qd-result-stat strong{display:block;margin-top:.2rem;font-size:1.05rem}
-.qd-result-stat.qd-payable{grid-column:1/-1;border-color:#bbf7d0;background:#f0fdf4}
-.qd-result-stat.qd-payable strong{font-size:1.45rem;color:#166534}
-.qd-result-list{display:grid;gap:.6rem;margin-top:.85rem}
-.qd-result-row{border:1px solid #e2e8f0;border-radius:.85rem;padding:.8rem;background:#fff}
-.qd-result-row-top{display:flex;justify-content:space-between;gap:1rem;font-weight:800}
-.qd-result-row-meta{display:grid;grid-template-columns:1fr auto;gap:.3rem .75rem;margin-top:.45rem;font-size:.8rem;color:#64748b}
-.qd-result-row-meta span:nth-child(even){color:#0f172a;font-weight:700;text-align:right}
+.qd-fee-table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:1rem;font-size:.9rem;text-align:start}
+.qd-fee-table caption{text-align:start;font-weight:800;padding:0 0 .65rem;color:#0f172a}
+.qd-fee-table th,.qd-fee-table td{padding:.65rem .4rem;border-bottom:1px solid #e2e8f0;vertical-align:top;overflow-wrap:anywhere}
+.qd-fee-table thead th{font-size:.75rem;color:#64748b;font-weight:600;background:#f8fafc}
+.qd-fee-table th:first-child{width:60%;text-align:start}
+.qd-fee-table th:nth-child(2),.qd-fee-table td:nth-child(2){width:10%;text-align:center}
+.qd-fee-table th:last-child,.qd-fee-table td:last-child{width:30%;text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}
+.qd-fee-table tbody th{font-weight:500}
+.qd-fee-table tbody td:last-child{font-weight:700}
+.qd-government-total{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1rem;margin-top:.75rem;border:1px solid #bbf7d0;border-radius:.8rem;background:#f0fdf4;color:#166534;font-weight:700}
+.qd-government-total strong{font-size:1.3rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.qd-result-small-note,.qd-service-note,.qd-estimate-footnote{font-size:.8rem;line-height:1.5;margin-top:.65rem;color:#64748b}
+.qd-result-small-note{color:#854d0e}
 .qd-result-note{margin-top:.8rem;padding:.8rem;border-radius:.85rem;background:#fffbeb;border:1px solid #fde68a;font-size:.84rem;color:#78350f}
 .qd-docs-box{margin-top:.85rem;border:1px solid #e2e8f0;border-radius:.9rem;padding:.9rem;background:#fff}
 .qd-docs-box summary{cursor:pointer;font-weight:800}
@@ -111,9 +113,46 @@
  .qd-wizard-section{padding:2.25rem 0 3.25rem}
  .qd-wizard-panel{padding:1.65rem}
  .qd-choice-grid.qd-two{grid-template-columns:repeat(2,minmax(0,1fr))}
- .qd-result-totals{grid-template-columns:repeat(3,minmax(0,1fr))}
- .qd-result-stat.qd-payable{grid-column:auto}
  .qd-docs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:767px){
+ .qd-wizard-section{padding:1rem 0 1.5rem;scroll-margin-top:5rem}
+ .qd-wizard-intro{margin-bottom:.85rem}
+ .qd-wizard-intro h2{font-size:1.5rem}
+ .qd-wizard-intro p{font-size:.9rem;line-height:1.45;margin-top:.4rem}
+ .qd-wizard-card{border-radius:1rem}
+ .qd-wizard-top{padding:.75rem .9rem}
+ .qd-wizard-panel{padding:.9rem}
+ .qd-wizard-panel h3{font-size:1.15rem}
+ .qd-wizard-panel>p{font-size:.9rem;line-height:1.5}
+ .qd-wizard-benefits{gap:.35rem;margin-top:.7rem;font-size:.85rem}
+ .qd-choice-grid,.qd-dependent-list{gap:.5rem;margin-top:.8rem}
+ .qd-choice-body{min-height:3.75rem;padding:.75rem}
+ .qd-choice input:checked+.qd-choice-body{padding:calc(.75rem - 1px)}
+ .qd-dependent{padding:.65rem;gap:.5rem}
+ .qd-dependent strong{font-size:.9rem}
+ .qd-dependent small{font-size:.75rem}
+ .qd-counter{gap:.3rem}
+ .qd-counter button{width:44px;height:44px}
+ .qd-wizard-actions{margin-top:.85rem;gap:.5rem}
+ .qd-wizard-actions button,.qd-wizard-actions a{font-size:.875rem;padding:.65rem .8rem}
+ .qd-result-head{padding:.7rem .8rem;border-radius:.75rem}
+ .qd-result-head .qd-result-title{font-size:.95rem}
+ .qd-result-head .qd-result-sub{font-size:.78rem;line-height:1.45}
+ .qd-fee-table{font-size:.8rem;margin-top:.8rem}
+ .qd-fee-table caption{padding-bottom:.45rem;font-size:.875rem}
+ .qd-fee-table th,.qd-fee-table td{padding:.5rem .2rem;line-height:1.4}
+ .qd-fee-table thead th{font-size:.7rem}
+ .qd-fee-table th:first-child{width:57%}
+ .qd-fee-table th:last-child,.qd-fee-table td:last-child{width:33%}
+ .qd-government-total{padding:.7rem .75rem;gap:.5rem;font-size:.85rem}
+ .qd-government-total strong{font-size:1.1rem}
+ .qd-wizard-panel>.qd-result-small-note,.qd-wizard-panel>.qd-service-note,.qd-wizard-panel>.qd-estimate-footnote{font-size:.75rem;line-height:1.5}
+ .qd-result-note{padding:.65rem;font-size:.78rem;margin-top:.6rem}
+ .qd-docs-box{padding:.7rem;margin-top:.65rem;font-size:.85rem}
+ .qd-docs-box>summary{min-height:28px;align-content:center}
+ .qd-doc-card{padding:.65rem;font-size:.8rem}
 }
 </style>
 </head>
@@ -130,7 +169,7 @@
     <div class="qd-wizard-intro">
       <div class="qd-wizard-kicker">FAMILY VISA COST CALCULATOR</div>
       <h2 id="family-quote-heading">Calculate your Family Visa cost</h2>
-      <p>Get a clear estimate of government fees and any refundable deposit that may apply to your case.</p>
+      <p>Estimate the government fees for your family visa application.</p>
     </div>
     <div class="qd-wizard-card">
       <div class="qd-wizard-top" data-wizard-top hidden>
@@ -143,7 +182,6 @@
         <p>Select your sponsor type, family members and application details. You can review everything before sending it to QuickDocs.</p>
         <ul class="qd-wizard-benefits">
           <li><span>✓</span><span>Government fees clearly itemised</span></li>
-          <li><span>✓</span><span>Refundable deposit shown where applicable</span></li>
           <li><span>✓</span><span>QuickDocs service charge confirmed separately on request</span></li>
         </ul>
         <div class="qd-wizard-actions"><button type="button" class="qd-wizard-start" data-start>Start calculator →</button></div>
@@ -151,7 +189,7 @@
 
       <div class="qd-wizard-panel" data-step="1" hidden>
         <h3>What type of sponsor are you?</h3>
-        <p>This affects the supporting documents and refundable deposit rules.</p>
+        <p>This helps us identify the supporting documents for your application.</p>
         <div class="qd-choice-grid qd-two">
           <label class="qd-choice"><input type="radio" name="qd-sponsor-type-wizard" value="salaried" checked><span class="qd-choice-body"><span><strong>Salaried Employee</strong><small>Employer-sponsored residence visa</small></span><span class="qd-choice-mark">✓</span></span></label>
           <label class="qd-choice"><input type="radio" name="qd-sponsor-type-wizard" value="investor"><span class="qd-choice-body"><span><strong>Investor / Partner</strong><small>Investor or partner residence visa</small></span><span class="qd-choice-mark">✓</span></span></label>
@@ -195,16 +233,17 @@
 
       <div class="qd-wizard-panel" data-step="result" hidden>
         <div class="qd-result-head"><div class="qd-result-title">✓ Your New Family Visa estimate is ready</div><div class="qd-result-sub" id="qd-result-sub"></div></div>
-        <div class="qd-result-totals">
-          <div class="qd-result-stat"><span>Government fees</span><strong id="qd-gov">AED 0.00</strong></div>
-          <div class="qd-result-stat"><span>QuickDocs service charge</span><strong id="qd-svc">Contact us</strong></div>
-          <div class="qd-result-stat"><span>Refundable deposit</span><strong id="qd-deposit">AED 0.00</strong></div>
-          <div class="qd-result-stat qd-payable"><span>Government fees + deposit</span><strong id="qd-total">AED 0.00</strong></div>
-        </div>
+        <table class="qd-fee-table">
+          <caption>Government fee breakdown</caption>
+          <thead><tr><th scope="col">Fee item</th><th scope="col">Qty</th><th scope="col">Amount</th></tr></thead>
+          <tbody id="qd-result-rows"></tbody>
+        </table>
+        <div class="qd-government-total"><span>Government fees total</span><strong id="qd-total">AED 0.00</strong></div>
+        <p id="qd-parent-deposit-note" class="qd-result-small-note" hidden>Parent applications may require a refundable security deposit. It is excluded from this total and will be confirmed by QuickDocs.</p>
+        <p class="qd-service-note">QuickDocs service charge is extra and confirmed on WhatsApp.</p>
         <div id="qd-file-warning" class="qd-result-note" hidden></div>
-        <details class="qd-docs-box" open><summary>Price breakdown</summary><div id="qd-result-rows" class="qd-result-list"></div></details>
         <details class="qd-docs-box"><summary>Documents needed for your selection</summary><div id="qd-docs" class="qd-docs-grid"></div><div class="qd-doc-card" style="margin-top:.65rem"><strong>Sponsor documents</strong><ul><li>Passport copy</li><li>Residence visa copy</li><li>Emirates ID copy</li><li>Salary certificate or labour contract, as applicable</li><li>Tenancy / accommodation documents where required</li></ul></div></details>
-        <p class="mt-4 text-xs text-slate-500">Estimate shows government fees and any refundable deposit only. The QuickDocs service charge is not included and is confirmed on WhatsApp before you proceed. Fines, insurance, attestation, translation and other case-specific charges are also excluded.</p>
+        <p class="qd-estimate-footnote">Government fees only. Any refundable security deposit, fines, insurance, attestation, translation and other case-specific charges are excluded and confirmed separately.</p>
         <div class="qd-wizard-actions" style="flex-wrap:wrap">
           <button type="button" class="qd-edit-details" data-edit>← Edit details</button>
           <a id="qd-wa" href="#" target="_blank" rel="noopener noreferrer" class="qd-whatsapp-quote">Send Quote on WhatsApp →</a>
@@ -236,15 +275,15 @@
    const adults=n.spouse+n.adultChild,standard=adults+n.minor,all=standard+n.parent,list=[];let uncertain=fs==='unsure';
    add(list,loc==='inside'?fees.inside2:fees.outside2,standard);add(list,loc==='inside'?fees.inside1:fees.outside1,n.parent);if(loc==='inside')add(list,fees.status,all);if(fs==='no'&&all)add(list,fees.file,1);add(list,fees.medical,adults+n.parent);add(list,fees.eid2,standard);add(list,fees.stamp2,standard);add(list,fees.eid1,n.parent);add(list,fees.stamp1,n.parent);
    let g=0;const rendered=list.map(([x,q])=>{const gov=x[1]*q;g+=gov;return{name:x[0],qty:q,gov}});
-   let deposit=n.parent*5000;if(sponsor==='investor'&&standard>0)deposit+=Math.min(15000,standard*3054);
-   r.querySelector('#qd-gov').textContent=money(g);r.querySelector('#qd-svc').textContent='Contact us';r.querySelector('#qd-deposit').textContent=money(deposit);r.querySelector('#qd-total').textContent=money(g+deposit);
-   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<div class="qd-result-row"><div class="qd-result-row-top"><span>'+x.name+'</span><span>× '+x.qty+'</span></div><div class="qd-result-row-meta"><span>Government fee</span><span>'+money(x.gov)+'</span></div></div>').join('')+'<div class="qd-result-row"><div class="qd-result-row-top"><span>Refundable deposit</span><span>'+money(deposit)+'</span></div></div>';
+   r.querySelector('#qd-parent-deposit-note').hidden=n.parent===0;
+   r.querySelector('#qd-total').textContent=money(g);
+   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<tr><th scope="row">'+x.name+'</th><td>'+x.qty+'</td><td>'+money(x.gov)+'</td></tr>').join('');
    const parts=[];if(n.spouse)parts.push('Spouse × '+n.spouse);if(n.minor)parts.push('Child under 18 × '+n.minor);if(n.adultChild)parts.push('Adult child × '+n.adultChild);if(n.parent)parts.push('Parent × '+n.parent);
    r.querySelector('#qd-result-sub').textContent=(sponsor==='investor'?'Investor / Partner':'Salaried Employee')+' • '+(loc==='inside'?'Inside UAE':'Outside UAE')+' • '+parts.join(' • ');
    const w=r.querySelector('#qd-file-warning');if(uncertain&&all){w.hidden=false;w.innerHTML='<strong>Family file needs verification.</strong> This estimate excludes file opening. If required: <strong>+ AED 206.30 (government fee)</strong>.';}else w.hidden=true;
    let docs='';if(n.spouse)docs+='<div class="qd-doc-card"><strong>Spouse / wife × '+n.spouse+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Attested marriage certificate</li><li>Current visa / Emirates ID where applicable</li><li>Medical fitness for applicants 18+</li></ul></div>';if(n.minor)docs+='<div class="qd-doc-card"><strong>Child under 18 × '+n.minor+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Attested birth certificate</li><li>Current visa / Emirates ID where applicable</li></ul></div>';if(n.adultChild)docs+='<div class="qd-doc-card"><strong>Adult son / daughter × '+n.adultChild+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Attested birth certificate</li><li>Current visa / Emirates ID where applicable</li><li>Medical fitness</li><li>Additional eligibility documents may be required</li></ul></div>';if(n.parent)docs+='<div class="qd-doc-card"><strong>Parent × '+n.parent+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Medical fitness</li><li>Attested tenancy / suitable accommodation evidence</li><li>Additional parent-sponsorship documents may be required</li></ul></div>';if(sponsor==='investor')docs+='<div class="qd-doc-card"><strong>Investor / partner sponsor</strong><p style="margin-top:.4rem;color:#64748b">Company and investor/partner documents differ from salaried sponsorship. QuickDocs will confirm the exact checklist.</p></div>';r.querySelector('#qd-docs').innerHTML=docs;
    const applicants=[];if(n.spouse)applicants.push('• Spouse: '+n.spouse);if(n.minor)applicants.push('• Child under 18: '+n.minor);if(n.adultChild)applicants.push('• Adult child: '+n.adultChild);if(n.parent)applicants.push('• Parent: '+n.parent);
-   const msg='*QuickDocs UAE – Family Visa Quote*\n\n*Application:* New Family Visa\n*Sponsor Type:* '+(sponsor==='investor'?'Investor / Partner':'Salaried Employee')+'\n*Location:* '+(loc==='inside'?'Inside UAE':'Outside UAE')+'\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service Charge: Please confirm with QuickDocs\nRefundable Deposit: '+money(deposit)+'\n\n*Government Fees + Deposit: '+money(g+deposit)+'*'+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';
+   const msg='*QuickDocs UAE – Family Visa Quote*\n\n*Application:* New Family Visa\n*Sponsor Type:* '+(sponsor==='investor'?'Investor / Partner':'Salaried Employee')+'\n*Location:* '+(loc==='inside'?'Inside UAE':'Outside UAE')+'\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service Charge: Please confirm with QuickDocs\n\n*Government Fees Total: '+money(g)+'*'+(n.parent?'\n\nParent applications may require a refundable security deposit, excluded from this total. QuickDocs will confirm separately.':'')+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';
    r.querySelector('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(msg);
  }
  r.querySelector('[data-start]').addEventListener('click',()=>show(1));
@@ -311,11 +350,6 @@
 <details class="qd-family-guide mt-4" open>
 <summary>Birth certificates for children</summary>
 <div class="qd-family-guide-body"><p class="text-slate-600 leading-relaxed">For a new child family-visa case, prepare the child's birth certificate early. GDRFA's family entry-permit requirements list an attested birth certificate, so a foreign-issued certificate may need the applicable attestation route before the visa application can proceed.</p></div>
-</details>
-
-<details class="qd-family-guide mt-4" open>
-<summary>Refundable security deposits</summary>
-<div class="qd-family-guide-body"><div class="rounded-2xl border border-amber-200 bg-amber-50 p-5"><p class="text-slate-700">For new investor/partner-sponsored spouse, child or adult-child applications, the refundable deposit used in our quote calculator is <strong>AED 3,054 per dependent</strong>, capped at <strong>AED 15,000</strong> for those dependents. For a new parent visa, the refundable deposit is <strong>AED 5,000 per parent</strong> whether the sponsor is salaried or investor/partner. Renewal applications do not carry this deposit.</p></div></div>
 </details>
 
 <details class="qd-family-guide mt-4" open>

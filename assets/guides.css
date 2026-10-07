@@ -13,3 +13,23 @@
 .qd-guide-page a:focus-visible,.qd-related-card:focus-visible,.qd-guide-language a:focus-visible{outline:3px solid #7e22ce;outline-offset:4px}
 @media(min-width:768px){.qd-related-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:479px){.qd-author{gap:.75rem;padding:1rem}.qd-author img{width:40px;height:40px}.qd-guide-header{font-size:.9rem}.qd-guide-image{margin-top:1rem}.qd-guide-page{padding-top:1.5rem}}
+
+@media(max-width:767px){
+ .qd-guide-page{padding-block:1.25rem}
+ .qd-guide-page h1{font-size:1.8rem;line-height:1.25}
+ .qd-guide-page .qd-guide-intro{font-size:1rem;line-height:1.65}
+ .qd-guide-meta{margin:.7rem 0;font-size:.8rem}
+ .qd-guide-body h2{font-size:1.3rem;margin-top:1.5rem}
+ .qd-guide-body p,.qd-guide-body ul,.qd-guide-body ol{line-height:1.65}
+ .qd-guide-body li{margin:.4rem 0}
+ .qd-guide-toc{padding:.85rem;margin:.85rem 0 1.25rem}
+ .qd-guide-image{margin:1rem 0;max-height:240px}
+ .qd-related{gap:.65rem;margin-top:.85rem}
+ .qd-related-card{padding:.85rem 1rem}
+ .qd-related-card h3{font-size:1rem;margin-bottom:.3rem}
+ .qd-related-card p{font-size:.9rem;line-height:1.5}
+ .qd-related-card small{margin-top:.45rem;font-size:.75rem}
+ .qd-author{padding:.85rem;gap:.65rem;margin:1.25rem 0}
+ .qd-author p{font-size:.85rem;line-height:1.55}
+ .qd-guide-footer{margin-top:1.25rem;padding:1.25rem 1rem}
+}

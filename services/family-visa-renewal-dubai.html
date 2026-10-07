@@ -87,17 +87,19 @@
 .qd-result-head{border:1px solid #bbf7d0;background:#f0fdf4;border-radius:1rem;padding:1rem}
 .qd-result-head .qd-result-title{font-size:1.12rem;font-weight:800;color:#166534}
 .qd-result-head .qd-result-sub{margin-top:.3rem;color:#475569;font-size:.9rem}
-.qd-result-totals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:.85rem}
-.qd-result-stat{border:1px solid #e2e8f0;border-radius:.9rem;padding:.85rem;background:#fff}
-.qd-result-stat span{font-size:.78rem;color:#64748b}
-.qd-result-stat strong{display:block;margin-top:.2rem;font-size:1.05rem}
-.qd-result-stat.qd-payable{grid-column:1/-1;border-color:#bbf7d0;background:#f0fdf4}
-.qd-result-stat.qd-payable strong{font-size:1.45rem;color:#166534}
-.qd-result-list{display:grid;gap:.6rem;margin-top:.85rem}
-.qd-result-row{border:1px solid #e2e8f0;border-radius:.85rem;padding:.8rem;background:#fff}
-.qd-result-row-top{display:flex;justify-content:space-between;gap:1rem;font-weight:800}
-.qd-result-row-meta{display:grid;grid-template-columns:1fr auto;gap:.3rem .75rem;margin-top:.45rem;font-size:.8rem;color:#64748b}
-.qd-result-row-meta span:nth-child(even){color:#0f172a;font-weight:700;text-align:right}
+.qd-fee-table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:1rem;font-size:.9rem;text-align:start}
+.qd-fee-table caption{text-align:start;font-weight:800;padding:0 0 .65rem;color:#0f172a}
+.qd-fee-table th,.qd-fee-table td{padding:.65rem .4rem;border-bottom:1px solid #e2e8f0;vertical-align:top;overflow-wrap:anywhere}
+.qd-fee-table thead th{font-size:.75rem;color:#64748b;font-weight:600;background:#f8fafc}
+.qd-fee-table th:first-child{width:60%;text-align:start}
+.qd-fee-table th:nth-child(2),.qd-fee-table td:nth-child(2){width:10%;text-align:center}
+.qd-fee-table th:last-child,.qd-fee-table td:last-child{width:30%;text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}
+.qd-fee-table tbody th{font-weight:500}
+.qd-fee-table tbody td:last-child{font-weight:700}
+.qd-government-total{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1rem;margin-top:.75rem;border:1px solid #bbf7d0;border-radius:.8rem;background:#f0fdf4;color:#166534;font-weight:700}
+.qd-government-total strong{font-size:1.3rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.qd-result-small-note,.qd-service-note,.qd-estimate-footnote{font-size:.8rem;line-height:1.5;margin-top:.65rem;color:#64748b}
+.qd-result-small-note{color:#854d0e}
 .qd-result-note{margin-top:.8rem;padding:.8rem;border-radius:.85rem;background:#fffbeb;border:1px solid #fde68a;font-size:.84rem;color:#78350f}
 .qd-docs-box{margin-top:.85rem;border:1px solid #e2e8f0;border-radius:.9rem;padding:.9rem;background:#fff}
 .qd-docs-box summary{cursor:pointer;font-weight:800}
@@ -111,9 +113,46 @@
  .qd-wizard-section{padding:2.5rem 0 3.25rem}
  .qd-wizard-panel{padding:1.65rem}
  .qd-choice-grid.qd-two{grid-template-columns:repeat(2,minmax(0,1fr))}
- .qd-result-totals{grid-template-columns:repeat(3,minmax(0,1fr))}
- .qd-result-stat.qd-payable{grid-column:auto}
  .qd-docs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:767px){
+ .qd-wizard-section{padding:1rem 0 1.5rem;scroll-margin-top:5rem}
+ .qd-wizard-intro{margin-bottom:.85rem}
+ .qd-wizard-intro h2{font-size:1.5rem}
+ .qd-wizard-intro p{font-size:.9rem;line-height:1.45;margin-top:.4rem}
+ .qd-wizard-card{border-radius:1rem}
+ .qd-wizard-top{padding:.75rem .9rem}
+ .qd-wizard-panel{padding:.9rem}
+ .qd-wizard-panel h3{font-size:1.15rem}
+ .qd-wizard-panel>p{font-size:.9rem;line-height:1.5}
+ .qd-wizard-benefits{gap:.35rem;margin-top:.7rem;font-size:.85rem}
+ .qd-choice-grid,.qd-dependent-list{gap:.5rem;margin-top:.8rem}
+ .qd-choice-body{min-height:3.75rem;padding:.75rem}
+ .qd-choice input:checked+.qd-choice-body{padding:calc(.75rem - 1px)}
+ .qd-dependent{padding:.65rem;gap:.5rem}
+ .qd-dependent strong{font-size:.9rem}
+ .qd-dependent small{font-size:.75rem}
+ .qd-counter{gap:.3rem}
+ .qd-counter button{width:44px;height:44px}
+ .qd-wizard-actions{margin-top:.85rem;gap:.5rem}
+ .qd-wizard-actions button,.qd-wizard-actions a{font-size:.875rem;padding:.65rem .8rem}
+ .qd-result-head{padding:.7rem .8rem;border-radius:.75rem}
+ .qd-result-head .qd-result-title{font-size:.95rem}
+ .qd-result-head .qd-result-sub{font-size:.78rem;line-height:1.45}
+ .qd-fee-table{font-size:.8rem;margin-top:.8rem}
+ .qd-fee-table caption{padding-bottom:.45rem;font-size:.875rem}
+ .qd-fee-table th,.qd-fee-table td{padding:.5rem .2rem;line-height:1.4}
+ .qd-fee-table thead th{font-size:.7rem}
+ .qd-fee-table th:first-child{width:57%}
+ .qd-fee-table th:last-child,.qd-fee-table td:last-child{width:33%}
+ .qd-government-total{padding:.7rem .75rem;gap:.5rem;font-size:.85rem}
+ .qd-government-total strong{font-size:1.1rem}
+ .qd-wizard-panel>.qd-result-small-note,.qd-wizard-panel>.qd-service-note,.qd-wizard-panel>.qd-estimate-footnote{font-size:.75rem;line-height:1.5}
+ .qd-result-note{padding:.65rem;font-size:.78rem;margin-top:.6rem}
+ .qd-docs-box{padding:.7rem;margin-top:.65rem;font-size:.85rem}
+ .qd-docs-box>summary{min-height:28px;align-content:center}
+ .qd-doc-card{padding:.65rem;font-size:.8rem}
 }
 </style>
 </head>
@@ -125,21 +164,14 @@
 <a href="https://wa.me/971508979376?text=Hello%20QuickDocs%20UAE%2C%20I%20would%20like%20to%20enquire%20about%3A%20Family%20Visa%20Renewal.%20Please%20share%20the%20requirements%20and%20details." target="_blank" rel="noopener noreferrer" class="rounded-xl bg-green-600 text-white px-4 py-2 font-bold">WhatsApp</a>
 </div></header>
 <main>
-<section class="bg-hero-tint"><div class="max-w-5xl mx-auto px-4 py-14">
-<nav aria-label="Breadcrumb" class="text-sm text-slate-500"><a href="/" class="hover:underline">Home</a> <span aria-hidden="true">›</span> <a href="/#services" class="hover:underline">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Family Visa Renewal</span></nav>
-<div class="mt-5 text-sm font-bold tracking-wider text-purple-700">QUICKDOCS UAE SERVICE</div>
-<h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">Family Visa Renewal Dubai</h1>
-<p class="mt-5 text-lg text-slate-600 max-w-3xl">Dependent visas need to be renewed before they expire. QuickDocs UAE checks your documents, flags problems early and supports the online renewal steps.</p>
-<div class="qd-tabby-notice" style="margin-top:1rem;padding:.875rem 1rem;border:1px solid #99e6cf;border-radius:.875rem;background:#effcf7;color:#173d32;line-height:1.5;text-align:start;display:flex;align-items:center;gap:1rem"><img src="/assets/images/tabby-logo.svg" alt="Tabby" width="88" height="24" style="display:block;width:88px;height:auto;flex-shrink:0"><div style="min-width:0;flex:1"><strong style="display:block;font-size:1rem">Tabby available for all services</strong><span style="display:block;margin-top:.25rem;font-size:.875rem">Payments are subject to Tabby approval and terms.</span><a href="/tabby.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:.25rem;font-size:.875rem;font-weight:700;text-decoration:underline;text-underline-offset:3px">How Tabby payments work</a></div></div>
-<a href="https://wa.me/971508979376?text=Hello%20QuickDocs%20UAE%2C%20I%20would%20like%20to%20enquire%20about%3A%20Family%20Visa%20Renewal.%20Please%20share%20the%20requirements%20and%20details." target="_blank" rel="noopener noreferrer" class="inline-flex mt-7 rounded-xl bg-green-600 text-white px-6 py-3.5 font-bold">Ask QuickDocs on WhatsApp</a>
-</div></section>
+
 
 <section id="family-quote-calculator" class="qd-wizard-section" aria-labelledby="family-quote-heading" data-mode="renewal">
   <div class="qd-wizard-shell">
     <div class="qd-wizard-intro">
       <div class="qd-wizard-kicker">FAMILY VISA RENEWAL CALCULATOR</div>
       <h2 id="family-quote-heading">Calculate your Family Visa renewal cost</h2>
-      <p>Add the dependants you are renewing and answer the sponsor-file questions. Renewal has no refundable security deposit.</p>
+      <p>Estimate the government fees for your family visa renewal.</p>
     </div>
     <div class="qd-wizard-card">
       <div class="qd-wizard-top" data-wizard-top hidden>
@@ -148,12 +180,11 @@
       </div>
 
       <div class="qd-wizard-panel" data-step="start">
-        <h3>Get your Family Visa renewal estimate</h3>
-        <p>Answer a few simple questions to get an estimated cost for your family visa renewal. You can review and edit your details before sending the quote to QuickDocs.</p>
+        <h3>Start your estimate</h3>
+        <p>Select your family members and sponsor-file details. Review your estimate before sending it to QuickDocs.</p>
         <ul class="qd-wizard-benefits">
-          <li><span>✓</span><span>Government fees shown separately</span></li>
+          <li><span>✓</span><span>Government fees clearly itemised</span></li>
           <li><span>✓</span><span>QuickDocs service charge confirmed separately on request</span></li>
-          <li><span>✓</span><span>No refundable deposit for renewal</span></li>
         </ul>
         <div class="qd-wizard-actions"><button type="button" class="qd-wizard-start" data-start>Start renewal calculator →</button></div>
       </div>
@@ -195,16 +226,16 @@
 
       <div class="qd-wizard-panel" data-step="result" hidden>
         <div class="qd-result-head"><div class="qd-result-title">✓ Your Family Visa renewal estimate is ready</div><div class="qd-result-sub" id="qd-result-sub"></div></div>
-        <div class="qd-result-totals">
-          <div class="qd-result-stat"><span>Government fees</span><strong id="qd-gov">AED 0.00</strong></div>
-          <div class="qd-result-stat"><span>QuickDocs service charge</span><strong id="qd-svc">Confirmed on WhatsApp</strong></div>
-          <div class="qd-result-stat"><span>Refundable deposit</span><strong>Not applicable</strong></div>
-          <div class="qd-result-stat qd-payable"><span>Government fees total</span><strong id="qd-total">AED 0.00</strong></div>
-        </div>
+        <table class="qd-fee-table">
+          <caption>Government fee breakdown</caption>
+          <thead><tr><th scope="col">Fee item</th><th scope="col">Qty</th><th scope="col">Amount</th></tr></thead>
+          <tbody id="qd-result-rows"></tbody>
+        </table>
+        <div class="qd-government-total"><span>Government fees total</span><strong id="qd-total">AED 0.00</strong></div>
+        <p class="qd-service-note">QuickDocs service charge is extra and confirmed on WhatsApp.</p>
         <div id="qd-file-warning" class="qd-result-note" hidden></div>
-        <details class="qd-docs-box" open><summary>Price breakdown</summary><div id="qd-result-rows" class="qd-result-list"></div></details>
         <details class="qd-docs-box"><summary>Documents needed for your selection</summary><div id="qd-docs" class="qd-docs-grid"></div><div class="qd-doc-card" style="margin-top:.65rem"><strong>Sponsor documents</strong><ul><li>Passport copy</li><li>Residence visa copy</li><li>Emirates ID copy</li><li>Salary certificate or labour contract, as applicable</li><li>Tenancy / Ejari only for parent renewal cases</li></ul><p style="margin-top:.45rem;color:#64748b"><strong>Not required for standard renewal:</strong> marriage certificate and birth certificate.</p></div></details>
-        <p class="mt-4 text-xs text-slate-500">Estimate shows government fees only. No refundable security deposit is added. The QuickDocs service charge is not included and is confirmed on WhatsApp before you proceed. Fines, insurance and other case-specific charges are also excluded.</p>
+        <p class="qd-estimate-footnote">Government fees only. Renewal has no refundable security deposit. Fines, insurance and other case-specific charges are excluded.</p>
         <div class="qd-wizard-actions" style="flex-wrap:wrap"><button type="button" class="qd-edit-details" data-edit>← Edit details</button><a id="qd-wa" href="#" target="_blank" rel="noopener noreferrer" class="qd-whatsapp-quote">Send Quote on WhatsApp →</a></div>
       </div>
     </div>
@@ -222,13 +253,13 @@
    if(changed==='yes'){if(fs==='no'&&all)add(list,fees.file,1);uncertain=fs==='unsure';}else if(changed==='unsure')uncertain=true;
    add(list,fees.medical,adults+n.parent);add(list,fees.eid2,standard);add(list,fees.stamp2,standard);add(list,fees.eid1,n.parent);add(list,fees.stamp1,n.parent);
    let g=0;const rendered=list.map(([x,q])=>{const gov=x[1]*q;g+=gov;return{name:x[0],qty:q,gov}});
-   r.querySelector('#qd-gov').textContent=money(g);r.querySelector('#qd-total').textContent=money(g);
-   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<div class="qd-result-row"><div class="qd-result-row-top"><span>'+x.name+'</span><span>× '+x.qty+'</span></div><div class="qd-result-row-meta"><span>Government fee</span><span>'+money(x.gov)+'</span></div></div>').join('');
+   r.querySelector('#qd-total').textContent=money(g);
+   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<tr><th scope="row">'+x.name+'</th><td>'+x.qty+'</td><td>'+money(x.gov)+'</td></tr>').join('');
    const parts=[];if(n.spouse)parts.push('Spouse × '+n.spouse);if(n.minor)parts.push('Child under 18 × '+n.minor);if(n.adultChild)parts.push('Adult child × '+n.adultChild);if(n.parent)parts.push('Parent × '+n.parent);r.querySelector('#qd-result-sub').textContent=parts.join(' • ');
    const w=r.querySelector('#qd-file-warning');if(uncertain&&all){w.hidden=false;w.innerHTML='<strong>Family file needs verification.</strong> Current estimate excludes file opening. If required: <strong>+ AED 206.30 (government fee)</strong>.';}else w.hidden=true;
    let docs='';if(n.spouse)docs+='<div class="qd-doc-card"><strong>Spouse / wife × '+n.spouse+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness for applicants 18+</li></ul></div>';if(n.minor)docs+='<div class="qd-doc-card"><strong>Child under 18 × '+n.minor+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li></ul></div>';if(n.adultChild)docs+='<div class="qd-doc-card"><strong>Adult son / daughter × '+n.adultChild+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Additional eligibility documents may be required</li></ul></div>';if(n.parent)docs+='<div class="qd-doc-card"><strong>Parent × '+n.parent+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Tenancy / Ejari</li></ul></div>';r.querySelector('#qd-docs').innerHTML=docs;
    const applicants=[];if(n.spouse)applicants.push('• Spouse: '+n.spouse);if(n.minor)applicants.push('• Child under 18: '+n.minor);if(n.adultChild)applicants.push('• Adult child: '+n.adultChild);if(n.parent)applicants.push('• Parent: '+n.parent);
-   const msg='*QuickDocs UAE – Family Visa Renewal Quote*\n\n*Application:* Family Visa Renewal\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service Charge: Please confirm with QuickDocs\nRefundable Deposit: Not applicable\n\n*Government Fees Total: '+money(g)+'*'+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';r.querySelector('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(msg);
+   const msg='*QuickDocs UAE – Family Visa Renewal Quote*\n\n*Application:* Family Visa Renewal\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service Charge: Please confirm with QuickDocs\n\n*Government Fees Total: '+money(g)+'*'+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';r.querySelector('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(msg);
  }
  r.querySelector('[data-start]').addEventListener('click',()=>show(1));
  r.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{if(step==='1'&&Object.values(n).reduce((a,b)=>a+b,0)===0){r.querySelector('#qd-applicant-error').hidden=false;return;}r.querySelector('#qd-applicant-error').hidden=true;show(Number(step)+1)}));
@@ -240,6 +271,15 @@
 })();
 </script>
 </section>
+
+<section class="bg-hero-tint"><div class="max-w-5xl mx-auto px-4 py-14">
+<nav aria-label="Breadcrumb" class="text-sm text-slate-500"><a href="/" class="hover:underline">Home</a> <span aria-hidden="true">›</span> <a href="/#services" class="hover:underline">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Family Visa Renewal</span></nav>
+<div class="mt-5 text-sm font-bold tracking-wider text-purple-700">QUICKDOCS UAE SERVICE</div>
+<h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">Family Visa Renewal Dubai</h1>
+<p class="mt-5 text-lg text-slate-600 max-w-3xl">Dependent visas need to be renewed before they expire. QuickDocs UAE checks your documents, flags problems early and supports the online renewal steps.</p>
+<div class="qd-tabby-notice" style="margin-top:1rem;padding:.875rem 1rem;border:1px solid #99e6cf;border-radius:.875rem;background:#effcf7;color:#173d32;line-height:1.5;text-align:start;display:flex;align-items:center;gap:1rem"><img src="/assets/images/tabby-logo.svg" alt="Tabby" width="88" height="24" style="display:block;width:88px;height:auto;flex-shrink:0"><div style="min-width:0;flex:1"><strong style="display:block;font-size:1rem">Tabby available for all services</strong><span style="display:block;margin-top:.25rem;font-size:.875rem">Payments are subject to Tabby approval and terms.</span><a href="/tabby.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:.25rem;font-size:.875rem;font-weight:700;text-decoration:underline;text-underline-offset:3px">How Tabby payments work</a></div></div>
+<a href="https://wa.me/971508979376?text=Hello%20QuickDocs%20UAE%2C%20I%20would%20like%20to%20enquire%20about%3A%20Family%20Visa%20Renewal.%20Please%20share%20the%20requirements%20and%20details." target="_blank" rel="noopener noreferrer" class="inline-flex mt-7 rounded-xl bg-green-600 text-white px-6 py-3.5 font-bold">Ask QuickDocs on WhatsApp</a>
+</div></section>
 
 <section class="py-14 qd-renew-page"><div class="max-w-5xl mx-auto px-4 grid lg:grid-cols-[1.4fr_.8fr] gap-10">
 <article class="max-w-none">

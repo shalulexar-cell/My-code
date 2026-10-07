@@ -164,3 +164,39 @@ h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-heading)}
 .qd-service-image-link{display:block;position:relative;z-index:2}
 .qd-service-title-link{position:relative;z-index:2}
 .qd-service-image-link:focus-visible,.qd-service-title-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+
+/* Compact reading layouts on phones; retain the desktop columns and spacing. */
+main .grid>*,header>div>*{min-width:0}
+@media(max-width:767px){
+ main:not(.qd-home):is(.py-14,.py-16),main:not(.qd-home) :is(section.py-14,section.py-16,div.py-14,div.py-16){padding-block:1.5rem}
+ main:not(.qd-home) :is(section.py-10,section.py-12){padding-block:1.25rem}
+ main:not(.qd-home) h1{font-size:1.8rem;line-height:1.2;overflow-wrap:break-word}
+ main:not(.qd-home) h2.text-2xl{font-size:1.3rem;line-height:1.3}
+ main:not(.qd-home) .text-lg{font-size:1rem;line-height:1.55}
+ main:not(.qd-home) :is(.mt-6,.mt-7,.mt-8){margin-top:1rem}
+ main:not(.qd-home) :is(.mt-10,.mt-12){margin-top:1.4rem}
+ main:not(.qd-home) article>h2:first-child{margin-top:0}
+ main:not(.qd-home) :is(.gap-8,.gap-10){gap:1.25rem}
+ main:not(.qd-home) :is(.gap-5,.gap-6){gap:.75rem}
+ main:not(.qd-home) :is(.p-5,.p-6,.p-7){padding:1rem}
+ main:not(.qd-home) aside{margin-top:0;min-width:0}
+ main:not(.qd-home) .space-y-6>:not([hidden])~:not([hidden]){margin-top:1rem}
+ main:not(.qd-home) details>summary{min-height:44px;align-content:center}
+ main:not(.qd-home) :is(.qd-family-guide,.qd-renew-guide)>summary{padding:.65rem .85rem}
+ main:not(.qd-home) :is(.qd-family-guide-body,.qd-renew-guide-body){padding-inline:.85rem}
+ main:not(.qd-home) .qd-tabby-notice{padding:.7rem .8rem!important;gap:.75rem!important}
+ main:not(.qd-home) .qd-tabby-notice img{width:64px!important}
+ main:not(.qd-home) .qd-tabby-notice strong{font-size:.9rem!important}
+ main:not(.qd-home) .qd-tabby-notice span{font-size:.8rem!important}
+ body>header>div:first-child{gap:.5rem;padding-block:.5rem}
+ body>header>div:first-child>a{gap:.5rem}
+ body>header img{width:36px;height:36px;flex-shrink:0}
+ body>header a.rounded-xl:not(.hidden){min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;padding-inline:.75rem}
+ body>header .font-display{font-size:.9rem}
+ body>footer>div:first-child.grid{padding-block:1.5rem;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body>footer>div:first-child.grid>div{min-width:0;overflow-wrap:anywhere}
+ body>footer>div:first-child.grid>div:first-child{grid-column:1/-1}
+ body>footer>div:first-child.grid a{display:inline-block;padding-block:.25rem}
+ body>footer>div:last-child{padding:1rem;font-size:.8rem;overflow-wrap:anywhere}
+}
