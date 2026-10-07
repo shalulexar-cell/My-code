@@ -152,7 +152,7 @@
         <p>Answer a few simple questions to get an estimated cost for your family visa renewal. You can review and edit your details before sending the quote to QuickDocs.</p>
         <ul class="qd-wizard-benefits">
           <li><span>✓</span><span>Government fees shown separately</span></li>
-          <li><span>✓</span><span>QuickDocs service charge + VAT shown separately</span></li>
+          <li><span>✓</span><span>QuickDocs service charge confirmed separately on request</span></li>
           <li><span>✓</span><span>No refundable deposit for renewal</span></li>
         </ul>
         <div class="qd-wizard-actions"><button type="button" class="qd-wizard-start" data-start>Start renewal calculator →</button></div>
@@ -197,14 +197,14 @@
         <div class="qd-result-head"><div class="qd-result-title">✓ Your Family Visa renewal estimate is ready</div><div class="qd-result-sub" id="qd-result-sub"></div></div>
         <div class="qd-result-totals">
           <div class="qd-result-stat"><span>Government fees</span><strong id="qd-gov">AED 0.00</strong></div>
-          <div class="qd-result-stat"><span>QuickDocs + VAT</span><strong id="qd-svc">AED 0.00</strong></div>
+          <div class="qd-result-stat"><span>QuickDocs service charge</span><strong id="qd-svc">Confirmed on WhatsApp</strong></div>
           <div class="qd-result-stat"><span>Refundable deposit</span><strong>Not applicable</strong></div>
-          <div class="qd-result-stat qd-payable"><span>Estimated payable</span><strong id="qd-total">AED 0.00</strong></div>
+          <div class="qd-result-stat qd-payable"><span>Government fees total</span><strong id="qd-total">AED 0.00</strong></div>
         </div>
         <div id="qd-file-warning" class="qd-result-note" hidden></div>
         <details class="qd-docs-box" open><summary>Price breakdown</summary><div id="qd-result-rows" class="qd-result-list"></div></details>
         <details class="qd-docs-box"><summary>Documents needed for your selection</summary><div id="qd-docs" class="qd-docs-grid"></div><div class="qd-doc-card" style="margin-top:.65rem"><strong>Sponsor documents</strong><ul><li>Passport copy</li><li>Residence visa copy</li><li>Emirates ID copy</li><li>Salary certificate or labour contract, as applicable</li><li>Tenancy / Ejari only for parent renewal cases</li></ul><p style="margin-top:.45rem;color:#64748b"><strong>Not required for standard renewal:</strong> marriage certificate and birth certificate.</p></div></details>
-        <p class="mt-4 text-xs text-slate-500">Estimate for a standard Dubai family visa renewal. No refundable security deposit is added. Fines, insurance and other case-specific charges remain excluded where applicable.</p>
+        <p class="mt-4 text-xs text-slate-500">Estimate shows government fees only. No refundable security deposit is added. The QuickDocs service charge is not included and is confirmed on WhatsApp before you proceed. Fines, insurance and other case-specific charges are also excluded.</p>
         <div class="qd-wizard-actions" style="flex-wrap:wrap"><button type="button" class="qd-edit-details" data-edit>← Edit details</button><a id="qd-wa" href="#" target="_blank" rel="noopener noreferrer" class="qd-whatsapp-quote">Send Quote on WhatsApp →</a></div>
       </div>
     </div>
@@ -212,7 +212,7 @@
 <script>
 (()=>{
  const r=document.getElementById('family-quote-calculator'); if(!r||r.dataset.ready)return;r.dataset.ready='1';
- const n={spouse:1,minor:0,adultChild:0,parent:0},money=v=>'AED '+v.toFixed(2),fees={file:['File opening',206.30,31.50],medical:['Medical fitness',270,52.50],eid2:['Emirates ID – 2 years',353.91,31.50],stamp2:['Visa stamping – 2 years',419.56,105],eid1:['Emirates ID – 1 year',253.91,31.50],stamp1:['Visa stamping – 1 year',316.41,105]};
+ const n={spouse:1,minor:0,adultChild:0,parent:0},money=v=>'AED '+v.toFixed(2),fees={file:['File opening',206.30],medical:['Medical fitness',270],eid2:['Emirates ID – 2 years',353.91],stamp2:['Visa stamping – 2 years',419.56],eid1:['Emirates ID – 1 year',253.91],stamp1:['Visa stamping – 1 year',316.41]};
  let step='start';const panels=[...r.querySelectorAll('[data-step]')],top=r.querySelector('[data-wizard-top]'),bars=[...r.querySelectorAll('.qd-wizard-progress span')],qNames={1:'Family members',2:'Sponsor change',3:'Family sponsorship file'};
  function radio(name){return r.querySelector('input[name="'+name+'"]:checked')?.value}
  function show(next){step=String(next);panels.forEach(p=>p.hidden=p.dataset.step!==step);const numeric=Number(step);top.hidden=step==='start';if(step==='result'){r.querySelector('#qd-step-label').textContent='Estimate ready';r.querySelector('#qd-step-name').textContent='Review your quote';bars.forEach(b=>b.classList.add('is-active'));render();}else if(numeric){r.querySelector('#qd-step-label').textContent='Question '+numeric+' of 3';r.querySelector('#qd-step-name').textContent=qNames[numeric];bars.forEach((b,i)=>b.classList.toggle('is-active',i<numeric));}r.scrollIntoView({behavior:'smooth',block:'start'});}
@@ -221,14 +221,14 @@
    const changed=radio('qd-changed-wizard')||'no',fs=radio('qd-file-renew-wizard')||'yes',adults=n.spouse+n.adultChild,standard=adults+n.minor,all=standard+n.parent,list=[];let uncertain=false;
    if(changed==='yes'){if(fs==='no'&&all)add(list,fees.file,1);uncertain=fs==='unsure';}else if(changed==='unsure')uncertain=true;
    add(list,fees.medical,adults+n.parent);add(list,fees.eid2,standard);add(list,fees.stamp2,standard);add(list,fees.eid1,n.parent);add(list,fees.stamp1,n.parent);
-   let g=0,s=0;const rendered=list.map(([x,q])=>{const gov=x[1]*q,svc=x[2]*q;g+=gov;s+=svc;return{name:x[0],qty:q,gov,svc,total:gov+svc}});
-   r.querySelector('#qd-gov').textContent=money(g);r.querySelector('#qd-svc').textContent=money(s);r.querySelector('#qd-total').textContent=money(g+s);
-   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<div class="qd-result-row"><div class="qd-result-row-top"><span>'+x.name+'</span><span>× '+x.qty+'</span></div><div class="qd-result-row-meta"><span>Government</span><span>'+money(x.gov)+'</span><span>QuickDocs + VAT</span><span>'+money(x.svc)+'</span><span>Line total</span><span>'+money(x.total)+'</span></div></div>').join('');
+   let g=0;const rendered=list.map(([x,q])=>{const gov=x[1]*q;g+=gov;return{name:x[0],qty:q,gov}});
+   r.querySelector('#qd-gov').textContent=money(g);r.querySelector('#qd-total').textContent=money(g);
+   r.querySelector('#qd-result-rows').innerHTML=rendered.map(x=>'<div class="qd-result-row"><div class="qd-result-row-top"><span>'+x.name+'</span><span>× '+x.qty+'</span></div><div class="qd-result-row-meta"><span>Government fee</span><span>'+money(x.gov)+'</span></div></div>').join('');
    const parts=[];if(n.spouse)parts.push('Spouse × '+n.spouse);if(n.minor)parts.push('Child under 18 × '+n.minor);if(n.adultChild)parts.push('Adult child × '+n.adultChild);if(n.parent)parts.push('Parent × '+n.parent);r.querySelector('#qd-result-sub').textContent=parts.join(' • ');
-   const w=r.querySelector('#qd-file-warning');if(uncertain&&all){w.hidden=false;w.innerHTML='<strong>Family file needs verification.</strong> Current estimate excludes file opening. If required: <strong>+ AED 237.80</strong>.';}else w.hidden=true;
+   const w=r.querySelector('#qd-file-warning');if(uncertain&&all){w.hidden=false;w.innerHTML='<strong>Family file needs verification.</strong> Current estimate excludes file opening. If required: <strong>+ AED 206.30 (government fee)</strong>.';}else w.hidden=true;
    let docs='';if(n.spouse)docs+='<div class="qd-doc-card"><strong>Spouse / wife × '+n.spouse+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness for applicants 18+</li></ul></div>';if(n.minor)docs+='<div class="qd-doc-card"><strong>Child under 18 × '+n.minor+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li></ul></div>';if(n.adultChild)docs+='<div class="qd-doc-card"><strong>Adult son / daughter × '+n.adultChild+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Additional eligibility documents may be required</li></ul></div>';if(n.parent)docs+='<div class="qd-doc-card"><strong>Parent × '+n.parent+'</strong><ul><li>Passport copy</li><li>Passport-size photo</li><li>Current visa / Emirates ID</li><li>Medical fitness</li><li>Tenancy / Ejari</li></ul></div>';r.querySelector('#qd-docs').innerHTML=docs;
    const applicants=[];if(n.spouse)applicants.push('• Spouse: '+n.spouse);if(n.minor)applicants.push('• Child under 18: '+n.minor);if(n.adultChild)applicants.push('• Adult child: '+n.adultChild);if(n.parent)applicants.push('• Parent: '+n.parent);
-   const msg='*QuickDocs UAE – Family Visa Renewal Quote*\n\n*Application:* Family Visa Renewal\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service + VAT: '+money(s)+'\nRefundable Deposit: Not applicable\n\n*Estimated Payable: '+money(g+s)+'*'+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';r.querySelector('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(msg);
+   const msg='*QuickDocs UAE – Family Visa Renewal Quote*\n\n*Application:* Family Visa Renewal\n\n*Applicants*\n'+applicants.join('\n')+'\n\n*Estimated Fees*\nGovernment Fees: '+money(g)+'\nQuickDocs Service Charge: Please confirm with QuickDocs\nRefundable Deposit: Not applicable\n\n*Government Fees Total: '+money(g)+'*'+(uncertain?'\n\n⚠️ Family sponsorship file needs verification.':'')+'\n\nPlease verify my eligibility, required documents and final amount.';r.querySelector('#qd-wa').href='https://wa.me/971508979376?text='+encodeURIComponent(msg);
  }
  r.querySelector('[data-start]').addEventListener('click',()=>show(1));
  r.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{if(step==='1'&&Object.values(n).reduce((a,b)=>a+b,0)===0){r.querySelector('#qd-applicant-error').hidden=false;return;}r.querySelector('#qd-applicant-error').hidden=true;show(Number(step)+1)}));
