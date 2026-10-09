@@ -33,3 +33,7 @@
  .qd-author p{font-size:.85rem;line-height:1.55}
  .qd-guide-footer{margin-top:1.25rem;padding:1.25rem 1rem}
 }
+
+.qd-table-wrap{overflow-x:auto;margin-top:1rem;max-width:100%}.qd-reference-table{width:100%;border-collapse:collapse;font-size:.95rem}.qd-reference-table th,.qd-reference-table td{padding:.75rem;border:1px solid #e2e8f0;text-align:start;vertical-align:top}.qd-reference-table thead{background:#faf5ff}.qd-reference-table th{font-weight:700}.qd-guide-body .qd-author h2{margin-top:0}
+
+.qd-guide-page .qd-guide-intro{margin-top:1rem}.qd-guide-body .qd-related-card h3{margin-top:0}
