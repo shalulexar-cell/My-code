@@ -93,7 +93,7 @@
     ]
   }
   </script>
-</head>
+<link rel="stylesheet" href="/assets/attestation.css"><script src="/assets/qd-analytics-config.js"></script><script src="/assets/qd-tracking.js" defer></script></head>
 
 <body class="bg-white">
   <div class="bg-slate-950 text-white text-sm">
@@ -221,7 +221,7 @@
                 <option>Standard</option>
                 <option>Urgent</option>
               </select>
-              <button onclick="sendWhatsAppQuote()" class="md:col-span-3 rounded-xl bg-green-600 hover:bg-green-700 px-5 py-3.5 font-bold">
+              <button data-qd-quote="true" data-qd-source="home" onclick="sendWhatsAppQuote()" class="md:col-span-3 rounded-xl bg-green-600 hover:bg-green-700 px-5 py-3.5 font-bold">
                 Send Quote Request on WhatsApp
               </button>
             </div>
@@ -459,7 +459,8 @@
       </div>
     </section>
 
-    <section id="resources" class="py-16 bg-slate-50">
+    <section aria-labelledby="attestation-solutions-heading" class="py-8 bg-purple-50"><div class="qd-at-container"><h2 id="attestation-solutions-heading" class="text-2xl font-extrabold">Attestation help by document type</h2><p class="mt-2 text-slate-600">Understand the route for Indian, degree, marriage or birth certificates.</p><div class="qd-at-mini-links"><a href="/services/indian-certificate-attestation-dubai.html">Indian certificate attestation →</a><a href="/services/degree-certificate-attestation-dubai.html">Degree certificate attestation →</a><a href="/services/marriage-certificate-attestation-dubai.html">Marriage certificate attestation →</a><a href="/services/birth-certificate-attestation-dubai.html">Birth certificate attestation →</a><a href="/tools/attestation-checker.html">Free requirements checker →</a></div></div></section>
+<section id="resources" class="py-16 bg-slate-50">
       <div class="max-w-7xl mx-auto px-4">
         <div class="max-w-3xl">
           <span class="text-sm font-bold tracking-wider text-purple-600">QUICKDOCS GUIDES</span>
