@@ -36,6 +36,7 @@ function save(v){
 }
 function banner(){
  if(!valid||consent!==null)return;
+ var style=document.createElement("style");style.textContent=".qd-consent-banner{position:fixed;z-index:999;bottom:1rem;left:1rem;right:1rem;max-width:580px;margin:auto;background:white;color:#0f172a;padding:1.1rem;border:1px solid #cbd5e1;border-radius:1rem;box-shadow:0 9px 40px #0003}.qd-consent-banner p{line-height:1.5;font-size:.9rem;margin:.5rem 0}.qd-consent-banner button{padding:.6rem .9rem;border-radius:.5rem;margin-right:.5rem;background:#6b21a8;color:white;cursor:pointer}.qd-consent-banner button:last-of-type{background:#e2e8f0;color:#0f172a}";document.head.appendChild(style);
  var el=document.createElement("section");el.id="qd-consent-banner";el.className="qd-consent-banner";el.setAttribute("aria-label","Analytics preferences");
  el.innerHTML="<strong>Help us improve QuickDocs</strong><p>Allow optional analytics to measure page views and service enquiry clicks. We do not send your document details or WhatsApp messages to Analytics. <a href='/privacy.html' style='text-decoration:underline'>Privacy policy</a>.</p>";
  var accept=document.createElement("button");accept.type="button";accept.textContent="Allow analytics";
