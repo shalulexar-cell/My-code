@@ -93,10 +93,10 @@
     ]
   }
   </script>
-<link rel="stylesheet" href="/assets/attestation.css?v=20261022-cards"><script src="/assets/qd-analytics-config.js"></script><script src="/assets/qd-tracking.js" defer></script></head>
+<link rel="stylesheet" href="/assets/attestation.css?v=20261022-cards"><script src="/assets/qd-analytics-config.js"></script><script src="/assets/qd-tracking.js" defer></script><link rel="stylesheet" href="/assets/design.css?v=20261022"><script src="/assets/design.js?v=20261022" defer></script></head>
 
 <body class="qd-mobile-contact-page bg-white">
-  <div class="bg-slate-950 text-white text-sm">
+  <div class="qd-utility-bar bg-slate-950 text-white text-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
       <div class="flex flex-wrap items-center gap-4">
         <span>Mon–Sat: 9:00 AM–7:00 PM</span>
@@ -108,47 +108,11 @@
     </div>
   </div>
 
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-5">
-      <a href="/" class="flex items-center gap-3 shrink-0" aria-label="QuickDocs UAE home">
-        <img src="/assets/images/logo-96.webp" alt="QuickDocs UAE logo" width="48" height="48" class="h-12 w-12 rounded-xl object-cover">
-        <div>
-          <div class="font-display font-extrabold text-lg leading-tight">QuickDocs UAE</div>
-          <div class="text-xs text-slate-500">Online Document Support</div>
-        </div>
-      </a>
-
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
-        <a href="#services" class="hover:text-sky-600">Services</a>
-        <a href="#family-visa" class="hover:text-sky-600">Family Visa</a>
-        <a href="/articles/" class="hover:text-sky-600">Blog &amp; Guides</a>
-        <a href="#how-it-works" class="hover:text-sky-600">How it works</a>
-        <a href="#faq" class="hover:text-sky-600">FAQs</a>
-        <a href="#contact" class="hover:text-sky-600">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="/ar/" lang="ar" dir="rtl" class="inline-flex items-center rounded-lg border border-slate-200 px-3 py-2 font-bold text-sm hover:bg-slate-50" aria-label="عرض الموقع بالعربية">العربية</a>
-        <a href="https://wa.me/971508979376" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-green-600 text-white px-4 py-2.5 font-bold shadow-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-4 h-4" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> WhatsApp
-        </a>
-        <button id="mobileMenuBtn" aria-label="Open menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden p-2 rounded-lg border border-slate-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide " aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 px-4 py-4 bg-white">
-      <div class="flex flex-col gap-3 font-semibold">
-        <a href="#services" onclick="toggleMobileMenu()">Services</a>
-        <a href="#family-visa" onclick="toggleMobileMenu()">Family Visa</a>
-        <a href="/articles/" onclick="toggleMobileMenu()">Blog &amp; Guides</a>
-        <a href="#how-it-works" onclick="toggleMobileMenu()">How it works</a>
-        <a href="#faq" onclick="toggleMobileMenu()">FAQs</a>
-        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-      </div>
-    </div>
-  </header>
+  <header class="qd-site-header"><div class="qd-header-inner">
+<a class="qd-brand" href="/" aria-label="QuickDocs UAE home"><img src="/assets/images/logo-96.webp" width="48" height="48" alt=""><span><strong>QuickDocs UAE</strong><small>Online document support</small></span></a>
+<nav class="qd-desktop-nav" aria-label="Main navigation"><a href="/#services">Services</a><a href="/#family-visa">Family visa</a><a href="/articles/">Guides</a><a href="/#how-it-works">How it works</a><a href="/#contact">Contact</a></nav>
+<div class="qd-header-actions"><a href="/ar/" lang="ar" hreflang="ar" class="qd-language">العربية</a><a class="qd-header-wa" href="https://wa.me/971508979376" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<details class="qd-menu"><summary aria-label="Open navigation menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></summary><nav aria-label="Mobile navigation"><a href="/#services">Services</a><a href="/#family-visa">Family visa</a><a href="/articles/">Guides</a><a href="/#how-it-works">How it works</a><a href="/#contact">Contact</a><a href="https://wa.me/971508979376">Chat on WhatsApp</a></nav></details></div></div></header>
 
   <main class="qd-home">
     <section class="bg-hero-tint qd-home-hero">
@@ -156,17 +120,17 @@
         <div class="reveal-up">
           <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-bold text-sky-700">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-4 h-4" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-            Professional online document support in the UAE
+            FAMILY VISA DUBAI &amp; UAE DOCUMENT SERVICES
           </span>
           <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Family Visa Dubai & UAE Document Services, Made Simple.
+            Family visas.<br>Documents.<br><span class="qd-hero-accent">Made simple.</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl">
-            Get online support for Dubai family visa applications and renewals, UAE MOFA attestation, full attestation, legal translation, PCC, Emirates ID typing and certificate equivalency.
+            From Dubai family visas to UAE attestation and document typing. Get a clear checklist, a personal quote and support at every step.
           </p>
           <div class="mt-8 flex flex-wrap gap-3 qd-hero-actions">
             <a href="https://wa.me/971508979376" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3.5 rounded-xl font-bold shadow-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> Get Help on WhatsApp
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> WhatsApp us
             </a>
             <a href="#services" class="qd-mobile-services">View services <span aria-hidden="true">↓</span></a>
             <a href="#quote-builder" class="qd-desktop-quote inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3.5 rounded-xl font-bold">
@@ -181,54 +145,52 @@
           </div>
         </div>
         <div class="qd-hero-media">
-          <picture><source media="(max-width:767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="><img src="/assets/images/quick-docs-hero-1280.webp" srcset="/assets/images/quick-docs-hero-640.webp 640w, /assets/images/quick-docs-hero-1280.webp 1280w" sizes="(min-width:1024px) 50vw, 100vw" alt="QuickDocs UAE online document and family visa support in Dubai" width="1280" height="1024" fetchpriority="high" class="w-full rounded-3xl shadow-2xl object-cover"></picture>
+          <picture><source media="(max-width:767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="><img src="/assets/images/document-preparation-1280.webp" srcset="/assets/images/document-preparation-640.webp 640w, /assets/images/document-preparation-1280.webp 1280w" sizes="(min-width:1024px) 50vw, 100vw" alt="Illustrative document preparation scene with a purple folder" width="1280" height="1024" fetchpriority="high" class="w-full rounded-3xl shadow-2xl object-cover"></picture>
         </div>
       </div>
     </section>
 
-    <section id="quote-builder" class="py-12">
-      <div class="max-w-5xl mx-auto px-4">
-        <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-2xl">
-          <div class="grid lg:grid-cols-[1.1fr_2fr] gap-8 items-center">
-            <div>
-              <span class="text-sm font-bold text-cyan-300">FAST QUOTE</span>
-              <h2 class="mt-2 text-2xl md:text-3xl font-extrabold">Tell us what you need.</h2>
-              <p class="mt-2 text-slate-300">Choose the service and send the details directly to WhatsApp.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-3">
-              <select id="qbService" aria-label="Service" class="rounded-xl bg-white text-slate-900 px-4 py-3">
-                <option>Family Visa New Application</option>
-                <option>Family Visa Renewal</option>
-                <option>Family Visa Cancellation</option>
-                <option>Family Visa Holding</option>
-                <option>Newborn Residency Visa</option>
-                <option>UAE MOFA Attestation</option>
-                <option>Full Document Attestation</option>
-                <option>Legal Translation</option>
-                <option>Police Clearance Certificate</option>
-                <option>Lost Passport Certificate</option>
-                <option>Emirates ID Services</option>
-                <option>Medical Fitness &amp; OHC Typing</option>
-                <option>Certificate Equivalency</option>
-              </select>
-              <select id="qbCount" aria-label="Number of documents" class="rounded-xl bg-white text-slate-900 px-4 py-3">
-                <option>1 document / application</option>
-                <option>2 documents / applications</option>
-                <option>3 documents / applications</option>
-                <option>More than 3</option>
-              </select>
-              <select id="qbSpeed" aria-label="Priority" class="rounded-xl bg-white text-slate-900 px-4 py-3">
-                <option>Standard</option>
-                <option>Urgent</option>
-              </select>
-              <button data-qd-quote="true" data-qd-source="home" onclick="sendWhatsAppQuote()" class="md:col-span-3 rounded-xl bg-green-600 hover:bg-green-700 px-5 py-3.5 font-bold">
-                Send Quote Request on WhatsApp
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="py-12" id="quote-builder">
+<div class="max-w-5xl mx-auto px-4">
+<div class="qd-quote-panel">
+<div class="grid lg:grid-cols-[1.1fr_2fr] gap-8 items-center">
+<div>
+<span class="qd-quote-eyebrow">FAST QUOTE</span>
+<h2 class="mt-2 text-2xl md:text-3xl font-extrabold">Tell us what you need.</h2>
+<p class="mt-2 text-slate-300">Choose the service and send the details directly to WhatsApp.</p>
+</div>
+<div class="qd-quote-fields">
+<label class="qd-field qd-field-service" for="qbService"><span>Service</span><select aria-label="Service" class="rounded-xl bg-white text-slate-900 px-4 py-3" id="qbService">
+<option value="Family Visa New Application">New family visa</option>
+<option value="Family Visa Renewal">Family Visa Renewal</option>
+<option value="Family Visa Cancellation">Family Visa Cancellation</option>
+<option value="Family Visa Holding">Family Visa Holding</option>
+<option value="Newborn Residency Visa">Newborn Residency Visa</option>
+<option value="UAE MOFA Attestation">UAE MOFA Attestation</option>
+<option value="Full Document Attestation">Full Document Attestation</option>
+<option value="Legal Translation">Legal Translation</option>
+<option value="Police Clearance Certificate">Police Clearance Certificate</option>
+<option value="Lost Passport Certificate">Lost Passport Certificate</option>
+<option value="Emirates ID Services">Emirates ID Services</option>
+<option value="Medical Fitness &amp; OHC Typing">Medical Fitness &amp; OHC Typing</option>
+<option value="Certificate Equivalency">Certificate Equivalency</option>
+</select></label>
+<label class="qd-field" for="qbCount"><span>Applications / documents</span><select aria-label="Number of documents" class="rounded-xl bg-white text-slate-900 px-4 py-3" id="qbCount">
+<option value="1 document / application">1 item</option>
+<option value="2 documents / applications">2 items</option>
+<option value="3 documents / applications">3 items</option>
+<option value="More than 3">More than 3</option>
+</select></label>
+<label class="qd-field" for="qbSpeed"><span>Priority</span><select aria-label="Priority" class="rounded-xl bg-white text-slate-900 px-4 py-3" id="qbSpeed">
+<option value="Standard">Standard</option>
+<option value="Urgent">Urgent</option>
+</select></label>
+<button class="qd-quote-submit" data-qd-quote="true" data-qd-source="home" onclick="sendWhatsAppQuote()">Request quote on WhatsApp</button>
+</div>
+</div>
+</div>
+</div>
+</section>
 
     <section id="why-quickdocs" class="py-16 bg-slate-50 border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4">
@@ -336,120 +298,100 @@
           <div class="qd-tabby-notice" style="margin-top:1rem;padding:.875rem 1rem;border:1px solid #99e6cf;border-radius:.875rem;background:#effcf7;color:#173d32;line-height:1.5;text-align:start;display:flex;align-items:center;gap:1rem"><img src="/assets/images/tabby-logo.svg" alt="Tabby" width="88" height="24" style="display:block;width:88px;height:auto;flex-shrink:0"><div style="min-width:0;flex:1"><strong style="display:block;font-size:1rem">Tabby available for all services</strong><span style="display:block;margin-top:.25rem;font-size:.875rem">Payments are subject to Tabby approval and terms.</span><a href="/tabby.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:.25rem;font-size:.875rem;font-weight:700;text-decoration:underline;text-underline-offset:3px">How Tabby payments work</a></div></div>
         </div>
 
-        <div class="qd-service-grid mt-10">
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/family-visa-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Family Visa Services"><img src="/assets/images/service-family-visa-480.webp" srcset="/assets/images/service-family-visa-480.webp 480w, /assets/images/service-family-visa-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Family visa services in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">01</span>
+        <div class="qd-service-filters" role="group" aria-label="Filter services" hidden><button type="button" data-filter="all" aria-pressed="true">All services</button><button type="button" data-filter="visas" aria-pressed="false">Family visas</button><button type="button" data-filter="documents" aria-pressed="false">Attestation &amp; documents</button><button type="button" data-filter="typing" aria-pressed="false">ID &amp; medical</button></div><p class="qd-sr-only" id="qd-service-count" aria-live="polite"></p><div class="qd-service-grid mt-10" id="qd-service-list">
+          <article class="qd-service-card qd-has-image" data-category="visas">
+            <a href="/services/family-visa-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Family Visa Services"><img src="/assets/images/service-family-visa-480.webp" srcset="/assets/images/service-family-visa-480.webp 480w, /assets/images/service-family-visa-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Family visa services in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/family-visa-dubai.html" class="qd-service-title-link">Family Visa Services</a></h3>
             <p>New family visa and sponsorship-related document support.</p>
-            <div class="qd-service-tags"><span>Dubai</span><span>Application Support</span></div>
             <div class="qd-service-actions">
               <a href="/services/family-visa-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Family Visa Services" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/family-visa-renewal-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Family Visa Renewal"><img src="/assets/images/service-visa-renewal-480.webp" srcset="/assets/images/service-visa-renewal-480.webp 480w, /assets/images/service-visa-renewal-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Family visa renewal support in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">02</span>
+          <article class="qd-service-card qd-has-image" data-category="visas">
+            <a href="/services/family-visa-renewal-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Family Visa Renewal"><img src="/assets/images/service-visa-renewal-480.webp" srcset="/assets/images/service-visa-renewal-480.webp 480w, /assets/images/service-visa-renewal-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Family visa renewal support in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/family-visa-renewal-dubai.html" class="qd-service-title-link">Family Visa Renewal</a></h3>
             <p>Renewal support and document checks for dependent visas.</p>
-            <div class="qd-service-tags"><span>Visa Renewal</span><span>Document Check</span></div>
             <div class="qd-service-actions">
               <a href="/services/family-visa-renewal-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Family Visa Renewal" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/mofa-attestation-dubai.html" class="qd-service-image qd-service-image-link" aria-label="MOFA &amp; Full Attestation"><img src="/assets/images/service-attestation-480.webp" srcset="/assets/images/service-attestation-480.webp 480w, /assets/images/service-attestation-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="UAE MOFA certificate attestation" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">03</span>
+          <article class="qd-service-card qd-has-image" data-category="documents">
+            <a href="/services/mofa-attestation-dubai.html" class="qd-service-image qd-service-image-link" aria-label="MOFA &amp; Full Attestation"><img src="/assets/images/service-attestation-480.webp" srcset="/assets/images/service-attestation-480.webp 480w, /assets/images/service-attestation-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="UAE MOFA certificate attestation" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/mofa-attestation-dubai.html" class="qd-service-title-link">MOFA & Full Attestation</a></h3>
             <p>Support for UAE MOFA attestation and full document attestation routes.</p>
-            <div class="qd-service-tags"><span>UAE Attestation</span><span>Document Support</span></div>
             <div class="qd-service-actions">
               <a href="/services/mofa-attestation-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="MOFA / Full Attestation" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/legal-translation-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Legal Translation"><img src="/assets/images/service-translation-480.webp" srcset="/assets/images/service-translation-480.webp 480w, /assets/images/service-translation-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Certified legal translation in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">04</span>
+          <article class="qd-service-card qd-has-image" data-category="documents">
+            <a href="/services/legal-translation-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Legal Translation"><img src="/assets/images/service-translation-480.webp" srcset="/assets/images/service-translation-480.webp 480w, /assets/images/service-translation-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Certified legal translation in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/legal-translation-dubai.html" class="qd-service-title-link">Legal Translation</a></h3>
             <p>Document translation support for UAE administrative and legal use.</p>
-            <div class="qd-service-tags"><span>Legal Translation</span><span>Official Use</span></div>
             <div class="qd-service-actions">
               <a href="/services/legal-translation-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Legal Translation" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/police-clearance-certificate-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Police Clearance Certificate"><img src="/assets/images/service-police-clearance-480.webp" srcset="/assets/images/service-police-clearance-480.webp 480w, /assets/images/service-police-clearance-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Police clearance certificate support in UAE" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">05</span>
+          <article class="qd-service-card qd-has-image" data-category="documents">
+            <a href="/services/police-clearance-certificate-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Police Clearance Certificate"><img src="/assets/images/service-police-clearance-480.webp" srcset="/assets/images/service-police-clearance-480.webp 480w, /assets/images/service-police-clearance-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Police clearance certificate support in UAE" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/police-clearance-certificate-dubai.html" class="qd-service-title-link">Police Clearance Certificate</a></h3>
             <p>Support with UAE PCC application-related document requirements.</p>
-            <div class="qd-service-tags"><span>Police Clearance</span><span>Application Support</span></div>
             <div class="qd-service-actions">
               <a href="/services/police-clearance-certificate-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Police Clearance Certificate" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/emirates-id-services-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Emirates ID Services"><img src="/assets/images/service-emirates-id-480.webp" srcset="/assets/images/service-emirates-id-480.webp 480w, /assets/images/service-emirates-id-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Emirates ID typing and document services" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">06</span>
+          <article class="qd-service-card qd-has-image" data-category="typing">
+            <a href="/services/emirates-id-services-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Emirates ID Services"><img src="/assets/images/service-emirates-id-480.webp" srcset="/assets/images/service-emirates-id-480.webp 480w, /assets/images/service-emirates-id-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Emirates ID typing and document services" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/emirates-id-services-dubai.html" class="qd-service-title-link">Emirates ID Services</a></h3>
             <p>Online typing and document support related to Emirates ID applications.</p>
-            <div class="qd-service-tags"><span>Emirates ID</span><span>Typing Support</span></div>
             <div class="qd-service-actions">
               <a href="/services/emirates-id-services-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Emirates ID Services" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/certificate-equivalency-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Certificate Equivalency"><img src="/assets/images/service-certificate-equivalency-480.webp" srcset="/assets/images/service-certificate-equivalency-480.webp 480w, /assets/images/service-certificate-equivalency-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Certificate equivalency support in UAE" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">07</span>
+          <article class="qd-service-card qd-has-image" data-category="documents">
+            <a href="/services/certificate-equivalency-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Certificate Equivalency"><img src="/assets/images/service-certificate-equivalency-480.webp" srcset="/assets/images/service-certificate-equivalency-480.webp 480w, /assets/images/service-certificate-equivalency-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Certificate equivalency support in UAE" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/certificate-equivalency-dubai.html" class="qd-service-title-link">Certificate Equivalency</a></h3>
             <p>Support for education certificate equivalency and document preparation.</p>
-            <div class="qd-service-tags"><span>Education Documents</span><span>Recognition Support</span></div>
             <div class="qd-service-actions">
               <a href="/services/certificate-equivalency-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Certificate Equivalency" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/newborn-residency-visa-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Newborn Residency Visa"><img src="/assets/images/service-newborn-baby-residency-visa-480.webp" srcset="/assets/images/service-newborn-baby-residency-visa-480.webp 480w, /assets/images/service-newborn-baby-residency-visa-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Newborn baby UAE residency visa support" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">08</span>
+          <article class="qd-service-card qd-has-image" data-category="visas">
+            <a href="/services/newborn-residency-visa-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Newborn Residency Visa"><img src="/assets/images/service-newborn-baby-residency-visa-480.webp" srcset="/assets/images/service-newborn-baby-residency-visa-480.webp 480w, /assets/images/service-newborn-baby-residency-visa-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Newborn baby UAE residency visa support" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/newborn-residency-visa-dubai.html" class="qd-service-title-link">Newborn Residency Visa</a></h3>
             <p>Document and typing support for newborn residency-related applications.</p>
-            <div class="qd-service-tags"><span>Newborn</span><span>Residency</span></div>
             <div class="qd-service-actions">
               <a href="/services/newborn-residency-visa-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Newborn Residency Visa" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/medical-fitness-ohc-typing-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Medical Fitness &amp; OHC Typing"><img src="/assets/images/service-medical-480.webp" srcset="/assets/images/service-medical-480.webp 480w, /assets/images/service-medical-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Medical fitness and OHC application typing support in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">09</span>
+          <article class="qd-service-card qd-has-image" data-category="typing">
+            <a href="/services/medical-fitness-ohc-typing-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Medical Fitness &amp; OHC Typing"><img src="/assets/images/service-medical-480.webp" srcset="/assets/images/service-medical-480.webp 480w, /assets/images/service-medical-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Medical fitness and OHC application typing support in Dubai" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/medical-fitness-ohc-typing-dubai.html" class="qd-service-title-link">Medical Fitness & OHC Typing</a></h3>
             <p>Online application typing support for residency medical fitness, Occupational Health Screening and applicable unified screening cases.</p>
-            <div class="qd-service-tags"><span>Medical Fitness</span><span>OHC Typing</span></div>
             <div class="qd-service-actions">
               <a href="/services/medical-fitness-ohc-typing-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Medical Fitness & OHC Typing" class="qd-whatsapp-mini">WhatsApp</button>
             </div>
           </article>
 
-          <article class="qd-service-card qd-has-image">
-            <a href="/services/lost-passport-certificate-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Lost Passport Certificate"><img src="/assets/images/service-lost-passport-480.webp" srcset="/assets/images/service-lost-passport-480.webp 480w, /assets/images/service-lost-passport-960.webp 960w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1050px) 45vw, 280px" alt="Dubai Police lost passport certificate support" width="944" height="704" loading="lazy" decoding="async"></a>
-            <span class="qd-service-number">10</span>
+          <article class="qd-service-card qd-has-image" data-category="documents">
+            <a href="/services/lost-passport-certificate-dubai.html" class="qd-service-image qd-service-image-link" aria-label="Lost Passport Certificate"><img src="/assets/images/service-lost-passport-480.webp" srcset="/assets/images/service-lost-passport-480.webp 480w, /assets/images/service-lost-passport-960.webp 960w" sizes="(max-width:620px) 88px, (max-width:1050px) 45vw, 380px" alt="Dubai Police lost passport certificate support" width="944" height="704" loading="lazy" decoding="async"></a>
             <h3><a href="/services/lost-passport-certificate-dubai.html" class="qd-service-title-link">Lost Passport Certificate</a></h3>
             <p>Application support for Lost Passport Certificates, including lost passport cases.</p>
-            <div class="qd-service-tags"><span>Dubai Police</span><span>Lost Documents</span></div>
             <div class="qd-service-actions">
               <a href="/services/lost-passport-certificate-dubai.html" class="qd-service-link">View service <span>→</span></a>
               <button data-service="Dubai Police Lost Passport Certificate" class="qd-whatsapp-mini">WhatsApp</button>
@@ -489,57 +431,37 @@
         <p class="qd-attestation-caption">Free checker · Find the steps for your document</p>
       </div>
     </section>
-<section id="resources" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="max-w-3xl">
-          <span class="text-sm font-bold tracking-wider text-purple-600">QUICKDOCS GUIDES</span>
-          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Useful UAE document guides</h2>
-          <p class="mt-3 text-slate-600">Simple explanations for common visa and document questions.</p>
-          <a href="/articles/" class="inline-block mt-4 text-purple-700 underline font-semibold">Browse all blog posts and guides</a>
-        </div>
-        <div class="mt-8 grid md:grid-cols-3 gap-5">
-          <a href="/articles/family-visa-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Family Visa Dubai: Complete Guide</h3>
-            <p class="mt-2 text-slate-600">Understand the basic application process and document categories.</p>
-          </a>
-          <a href="/articles/family-visa-requirements-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Family Visa Requirements Dubai</h3>
-            <p class="mt-2 text-slate-600">A practical checklist of commonly requested documents.</p>
-          </a>
-          <a href="/articles/family-visa-renewal-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Family Visa Renewal Dubai</h3>
-            <p class="mt-2 text-slate-600">What to prepare before starting a renewal application.</p>
-          </a>
-          <a href="/articles/family-visa-cost-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Family Visa Cost in Dubai</h3>
-            <p class="mt-2 text-slate-600">Why costs vary and what to check before requesting a quote.</p>
-          </a>
-          <a href="/articles/mofa-attestation-uae.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">MOFA Attestation UAE</h3>
-            <p class="mt-2 text-slate-600">Learn the difference between UAE MOFA and full attestation.</p>
-          </a>
-          <a href="/articles/police-clearance-certificate-uae.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Police Clearance Certificate UAE</h3>
-            <p class="mt-2 text-slate-600">Understand the typical PCC process and documents.</p>
-          </a>
-          <a href="/articles/legal-translation-uae.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Legal Translation UAE</h3><p class="mt-2 text-slate-600">When official translation may be needed and how to prepare your documents.</p>
-          </a>
-          <a href="/articles/certificate-recognition-uae.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Certificate Recognition UAE</h3><p class="mt-2 text-slate-600">Understand the current recognition process often searched as certificate equivalency.</p>
-          </a>
-          <a href="/articles/emirates-id-application-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Emirates ID Application Dubai</h3><p class="mt-2 text-slate-600">What to check before a new, renewal or replacement-related application.</p>
-          </a>
-          <a href="/articles/newborn-residency-visa-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Newborn Residency Visa Dubai</h3><p class="mt-2 text-slate-600">A practical preparation guide for parents arranging a baby's residency documents.</p>
-          </a>
-          <a href="/articles/medical-fitness-ohc-dubai.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition">
-            <h3 class="font-bold text-xl">Medical Fitness & OHC Dubai</h3><p class="mt-2 text-slate-600">Understand residency medical fitness, Occupational Health Screening and Unified Health Screening.</p>
-          </a>
-        </div>
-      </div>
-    </section>
+<section class="py-16 bg-slate-50" id="resources">
+<div class="max-w-7xl mx-auto px-4">
+<div class="max-w-3xl">
+<span class="text-sm font-bold tracking-wider text-purple-600">QUICKDOCS GUIDES</span>
+<h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Useful UAE document guides</h2>
+<p class="mt-3 text-slate-600">Simple explanations for common visa and document questions.</p>
+<a class="inline-block mt-4 text-purple-700 underline font-semibold" href="/articles/">Browse all blog posts and guides</a>
+</div>
+<div class="mt-8 grid md:grid-cols-3 gap-5">
+<a class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition" href="/articles/family-visa-dubai.html">
+<h3 class="font-bold text-xl">Family Visa Dubai: Complete Guide</h3>
+<p class="mt-2 text-slate-600">Understand the basic application process and document categories.</p>
+</a>
+
+
+
+<a class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition" href="/articles/mofa-attestation-uae.html">
+<h3 class="font-bold text-xl">MOFA Attestation UAE</h3>
+<p class="mt-2 text-slate-600">Learn the difference between UAE MOFA and full attestation.</p>
+</a>
+
+
+
+
+<a class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition" href="/articles/newborn-residency-visa-dubai.html">
+<h3 class="font-bold text-xl">Newborn Residency Visa Dubai</h3><p class="mt-2 text-slate-600">A practical preparation guide for parents arranging a baby's residency documents.</p>
+</a>
+
+</div>
+</div>
+</section>
 
     <div class="max-w-7xl mx-auto px-4"><nav aria-label="Application resources" class="mt-6 flex flex-wrap gap-3 text-sm font-semibold"><a href="/articles/document-photo-requirements-uae.html">Document & photo requirements</a><a href="/articles/check-visa-status-uae.html">Check visa status</a><a href="/about.html">About QuickDocs</a></nav></div>
     <section id="how-it-works" class="py-16">
@@ -654,58 +576,9 @@
     </section>
   </main>
 
-  <footer class="bg-slate-950 text-slate-300">
-    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <div class="text-white font-display font-extrabold text-xl">QuickDocs UAE</div>
-        <p class="mt-2 text-sm">Independent online visa, attestation, typing and document support in Dubai and across the UAE.</p>
-      </div>
-      <div>
-        <div class="text-white font-bold">Services</div>
-        <div class="mt-3 grid gap-2 text-sm">
-          <a href="/services/family-visa-dubai.html">Family Visa Dubai</a>
-          <a href="/services/family-visa-renewal-dubai.html">Family Visa Renewal</a>
-          <a href="/services/mofa-attestation-dubai.html">MOFA Attestation</a>
-          <a href="/services/legal-translation-dubai.html">Legal Translation</a>
-          <a href="/services/police-clearance-certificate-dubai.html">Police Clearance Certificate</a>
-          <a href="/services/emirates-id-services-dubai.html">Emirates ID Services</a>
-          <a href="/services/certificate-equivalency-dubai.html">Certificate Equivalency</a>
-          <a href="/services/newborn-residency-visa-dubai.html">Newborn Residency Visa</a>
-          <a href="/services/medical-fitness-ohc-typing-dubai.html">Medical Fitness & OHC Typing</a>
-          <a href="/services/lost-passport-certificate-dubai.html">Lost Passport Certificate</a>
-        </div>
-      </div>
-      <div>
-        <div class="text-white font-bold"><a href="/articles/">Blog &amp; Guides</a></div>
-        <div class="mt-3 grid gap-2 text-sm">
-          <a href="/tabby.html">Pay with Tabby</a>
-          <a href="/articles/family-visa-dubai.html">Family Visa Dubai Guide</a>
-          <a href="/articles/family-visa-requirements-dubai.html">Family Visa Requirements</a>
-          <a href="/articles/family-visa-renewal-dubai.html">Family Visa Renewal Guide</a>
-          <a href="/articles/family-visa-cost-dubai.html">Family Visa Cost</a>
-          <a href="/articles/mofa-attestation-uae.html">MOFA Attestation Guide</a>
-          <a href="/articles/police-clearance-certificate-uae.html">PCC Guide</a>
-          <a href="/articles/legal-translation-uae.html">Legal Translation Guide</a>
-          <a href="/articles/certificate-recognition-uae.html">Certificate Recognition Guide</a>
-          <a href="/articles/emirates-id-application-dubai.html">Emirates ID Guide</a>
-          <a href="/articles/newborn-residency-visa-dubai.html">Newborn Residency Guide</a>
-          <a href="/articles/medical-fitness-ohc-dubai.html">Medical Fitness & OHC Guide</a>
-        </div>
-      </div>
-      <div>
-        <div class="text-white font-bold">Contact</div>
-        <div class="mt-3 grid gap-2 text-sm">
-          <a href="https://wa.me/971508979376" target="_blank" rel="noopener noreferrer">+971 50 897 9376</a>
-          <a href="mailto:info@quickdocsuae.com">info@quickdocsuae.com</a>
-          <a href="https://www.instagram.com/quickdocsuae/" target="_blank" rel="noopener noreferrer">Instagram @quickdocsuae</a>
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-white/10 py-5 text-center text-sm">
-      <div>© 2026 Quickdocs Marketing Services. All rights reserved.</div>
-      <div class="mt-2 text-xs text-slate-400">Legal name: Quickdocs Marketing Services · Professional License No. 1651220 · Commercial Register No. 2922837 · Licensed by Dubai Department of Economy and Tourism (DET) · Valid until 06 September 2027</div>
-    </div>
-  </footer>
+  <footer class="qd-site-footer"><div class="qd-footer-grid"><div class="qd-footer-about"><strong>QuickDocs UAE</strong><p>Independent online visa, attestation and document support in Dubai and across the UAE.</p><a href="https://wa.me/971508979376" dir="ltr">+971 50 897 9376</a><a href="mailto:info@quickdocsuae.com">info@quickdocsuae.com</a><p>Mon–Sat, 9:00 AM–7:00 PM</p><a href="https://www.instagram.com/quickdocsuae/" target="_blank" rel="noopener noreferrer">Instagram @quickdocsuae</a></div>
+<details class="qd-footer-group" open><summary>Services</summary><div><a href="/services/family-visa-dubai.html">Family visa</a><a href="/services/family-visa-renewal-dubai.html">Visa renewal</a><a href="/services/family-visa-cancellation-dubai.html">Visa cancellation</a><a href="/services/family-visa-holding-dubai.html">Visa holding</a><a href="/services/newborn-residency-visa-dubai.html">Newborn residency</a><a href="/services/mofa-attestation-dubai.html">MOFA attestation</a><a href="/services/legal-translation-dubai.html">Legal translation</a><a href="/services/police-clearance-certificate-dubai.html">Police clearance</a><a href="/services/emirates-id-services-dubai.html">Emirates ID</a><a href="/services/medical-fitness-ohc-typing-dubai.html">Medical & OHC typing</a><a href="/services/certificate-equivalency-dubai.html">Certificate equivalency</a><a href="/services/lost-passport-certificate-dubai.html">Lost passport certificate</a></div></details><details class="qd-footer-group" open><summary>Guides & resources</summary><div><a href="/articles/">All guides</a><a href="/articles/family-visa-requirements-dubai.html">Family visa requirements</a><a href="/articles/mofa-attestation-uae.html">Attestation guide</a><a href="/tools/attestation-checker.html">Attestation checker</a><a href="/about.html">About QuickDocs</a><a href="/tabby.html">Pay with Tabby</a></div></details></div>
+<div class="qd-footer-legal"><p>© 2026 Quickdocs Marketing Services. All rights reserved.</p><p>Licensed in Dubai · Professional Licence No. 1651220 · Commercial Register No. 2922837</p><nav aria-label="Legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div></footer>
 
   <a href="https://wa.me/971508979376" target="_blank" rel="noopener noreferrer" aria-label="Chat with QuickDocs UAE on WhatsApp" class="qd-float-wa fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-green-600 text-white flex items-center justify-center shadow-2xl">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-7 h-7" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
